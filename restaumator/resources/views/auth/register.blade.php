@@ -1,10 +1,11 @@
 @extends('layouts.app')
+@include('partials._nav')
 
-@section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
+                <div class="margin-top-6"></div>
                 <div class="panel-heading">Register</div>
 
                 <div class="panel-body">
@@ -74,4 +75,3 @@
         </div>
     </div>
 </div>
-@endsection
