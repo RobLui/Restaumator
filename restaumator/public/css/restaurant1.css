@@ -1,0 +1,31 @@
+/* CLEARFIX */
+.clearfix::before, .clearfix::after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.clearfix::after {
+    clear: both;
+}
+.restauranttables
+{
+    list-style-type: none;
+    padding: 0px;
+    margin-top: -60px;
+}
+.restauranttables > li
+{
+    float: left;
+}
+.restauranttable:first-child
+{
+    margin-left: 12.5%;
+}
+.restauranttable
+{
+    margin-left: 5%;
+    display: block;
+    background-color: black;
+    width: 15%;
+    height: 40%;
+}

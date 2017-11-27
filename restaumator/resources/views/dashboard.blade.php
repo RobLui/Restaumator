@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<link rel="stylesheet" href="{{ asset('css/restaurant1.css') }}">
 @section('content')
 
     <div class="black-bg">
@@ -25,6 +25,15 @@
 
             </div>
         </nav>
+    </div>
+    <div class="maincontent">
+        <ul class="restauranttables clearfix">
+            <li class="restauranttable"></li>
+            <li class="restauranttable"></li>
+            <li class="restauranttable"></li>
+            <li class="restauranttable"></li>
+        </ul>
+        <div class="wall"></div>
     </div>
 
 @endsection
