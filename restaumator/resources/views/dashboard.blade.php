@@ -26,7 +26,7 @@
             </div>
         </nav>
     </div>
-    <div class="maincontent">
+    <div class="maincontent clearfix">
         <ul class="restauranttables clearfix">
             <li class="restauranttable"></li>
             <li class="restauranttable"></li>
@@ -34,6 +34,7 @@
             <li class="restauranttable"></li>
         </ul>
         <div class="wall"></div>
+        <div class="bar"></div>
     </div>
 
 @endsection

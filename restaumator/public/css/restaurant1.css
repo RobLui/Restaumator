@@ -29,3 +29,21 @@
     width: 15%;
     height: 40%;
 }
+.wall
+{
+    margin-top: 185px;
+    border-top:5px solid black;
+    border-right: 5px solid black;
+    width: 62.5%;
+    height: 200px;
+    float: left;
+}
+.bar
+{
+    margin-top: 175px;
+    background-color: black;
+    width: 25%;
+    height:10%;
+    float: left;
+    margin-left: 12.5%;
+}
