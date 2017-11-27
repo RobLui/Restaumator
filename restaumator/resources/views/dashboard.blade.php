@@ -26,15 +26,20 @@
             </div>
         </nav>
     </div>
-    <div class="maincontent clearfix">
-        <ul class="restauranttables clearfix">
-            <li class="restauranttable"></li>
-            <li class="restauranttable"></li>
-            <li class="restauranttable"></li>
-            <li class="restauranttable"></li>
-        </ul>
-        <div class="wall"></div>
-        <div class="bar"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="maincontent clearfix">
+                <ul class="restauranttables clearfix">
+                    <li class="restauranttable"></li>
+                    <li class="restauranttable"></li>
+                    <li class="restauranttable"></li>
+                    <li class="restauranttable"></li>
+                </ul>
+                <div class="wall"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
     </div>
-
+</div>
 @endsection
