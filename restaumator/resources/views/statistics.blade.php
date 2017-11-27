@@ -32,7 +32,7 @@
 <div class="row">
     <div class="col-md-4 col-sm-6 col-xs-12">
         <div class="info-box bg-aqua">
-            <span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>
+            <span class="info-box-icon"><i class="fa fa-beer"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Drinks</span>
@@ -50,7 +50,7 @@
 
     <div class="col-md-4 col-sm-6 col-xs-12">
         <div class="info-box bg-orange">
-            <span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>
+            <span class="info-box-icon"><i class="fa fa-money"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Bill</span>
@@ -68,7 +68,7 @@
 
     <div class="col-md-4 col-sm-6 col-xs-12">
         <div class="info-box bg-green">
-            <span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>
+            <span class="info-box-icon"><i class="fa fa-clock-o"></i></span>
 
             <div class="info-box-content">
                 <span class="info-box-text">Time spent</span>
