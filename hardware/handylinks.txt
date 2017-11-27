@@ -1,0 +1,1 @@
+http://www.instructables.com/id/Interfacing-Force-Sensitive-Resistor-to-Arduino/
