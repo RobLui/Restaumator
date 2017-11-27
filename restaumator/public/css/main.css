@@ -46,7 +46,7 @@ html, body {
 }
 
 .black-bg #mainNav {
-    background-color: black !important;
+    background-color: #fd7e14 !important;
     height: 7%;
     position:relative;
     display:block !important;

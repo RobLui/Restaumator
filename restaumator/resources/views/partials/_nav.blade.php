@@ -12,9 +12,6 @@
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#services">Service</a>
                 </li>
-                {{--<li class="nav-item">--}}
-                    {{--<a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>--}}
-                {{--</li>--}}
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
                 </li>

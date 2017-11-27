@@ -1,10 +1,10 @@
 <?php
 
+Auth::routes();
+
 Route::get('/', 'ProductpageController@index')
     ->name('productpage')
 ;
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')
     ->name('home')

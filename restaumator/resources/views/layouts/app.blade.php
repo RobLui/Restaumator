@@ -42,7 +42,7 @@
             <script src="{{ asset('js/vendor/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
 
             <!-- CUSTOM JS -->
-            <script src="{{ asset('js/app.js') }}"></script>
+{{--            <script src="{{ asset('js/app.js') }}"></script>--}}
             <script src="{{ asset('js/creative.min.js') }}"></script>
         </div>
     </body>

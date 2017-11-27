@@ -8,8 +8,6 @@
 
     @include('partials._services')
 
-    {{--@include('partials._portfolio')--}}
-
     @include('partials._experience')
 
     @include('partials._contact')
