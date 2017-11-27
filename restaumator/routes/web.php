@@ -15,5 +15,5 @@ Route::get('/dashboard', 'DashboardController@index')
 ;
 
 Route::get('/statistics', 'StatisticsController@index')
-    ->name('statics')
+    ->name('statistics')
 ;

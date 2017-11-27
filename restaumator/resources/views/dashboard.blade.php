@@ -14,10 +14,10 @@
                     <ul class="navbar-nav ml-auto">
 
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#statistics">Statistics</a>
+                            <a class="nav-link js-scroll-trigger" href="{{ route('statistics') }}">Statistics</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#dashboard">Dashboard</a>
+                            <a class="nav-link js-scroll-trigger" href="{{ route('dashboard') }}">Dashboard</a>
                         </li>
 
                     </ul>
