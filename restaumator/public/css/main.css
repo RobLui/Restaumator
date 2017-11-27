@@ -44,3 +44,9 @@ html, body {
 .margin-top-6 {
     margin-top:6em;
 }
+
+.black-bg #mainNav {
+    background-color: black !important;
+    height: 7%;
+    display:block;
+}
