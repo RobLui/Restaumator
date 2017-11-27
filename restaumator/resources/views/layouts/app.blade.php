@@ -14,6 +14,11 @@
         <link rel="stylesheet" href="{{ asset('css/font-awesome/css/font-awesome.css') }}">
         <link rel="stylesheet" href="{{ asset('css/creative.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+
+        {{-- ADMIN CSS --}}
+        <link rel="stylesheet" href="{{ asset('css/admin/adminLTE.css') }}">
+
+
         <link rel="stylesheet" href="{{ asset('js/vendor/magnific-popup/magnific-popup.css') }}">
 
         {{-- FONTS --}}
