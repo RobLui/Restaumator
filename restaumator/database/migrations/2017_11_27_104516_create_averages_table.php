@@ -15,10 +15,12 @@ class CreateAveragesTable extends Migration
     {
         Schema::create('averages', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer("bill_time");
-            $table->integer("drink_time");
-            $table->foreign('restaurant_id')
-                ->references('id')->on('restaurants')
+            $table->integer("bill_time")->nullable();
+            $table->integer("drink_time")->nullable();
+            $table->unsignedInteger('id_restaurants');
+            $table->foreign('id_restaurants')
+                ->references('id')
+                ->on('restaurants')
                 ->onDelete('cascade');
         });
     }
@@ -30,6 +32,6 @@ class CreateAveragesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('averages');
+        Schema::dropIfExists('average');
     }
 }

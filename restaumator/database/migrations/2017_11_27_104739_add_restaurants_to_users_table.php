@@ -14,8 +14,10 @@ class AddRestaurantsToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->foreign('restaurant_id')
-                ->references('id')->on('restaurants')
+            $table->unsignedInteger('id_restaurants');
+            $table->foreign('id_restaurants')
+                ->references('id')
+                ->on('restaurants')
                 ->onDelete('cascade');
         });
     }
