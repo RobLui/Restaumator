@@ -38,7 +38,7 @@
             <div class="info-box bg-aqua">
 
                 <span class="info-box-icon">
-                    <i class="fa fa-beer"></i>
+                    <i class="fa fa-glass"></i>
                 </span>
 
                 <div class="info-box-content">

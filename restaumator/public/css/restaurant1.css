@@ -30,7 +30,7 @@
 }
 
 .wall {
-    margin-top: 10.5em;
+    margin-top: 9.5em;
     border-top: 5px solid black;
     border-right: 5px solid black;
     border-radius: 4px;
@@ -41,7 +41,7 @@
 
 .bar {
     background-color: black;
-    margin-top: 10.5em;
+    margin-top: 9.5em;
     margin-left: 12.5%;
     border-radius: 4px;
     width: 25%;
