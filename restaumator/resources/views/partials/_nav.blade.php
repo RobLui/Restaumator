@@ -15,6 +15,19 @@
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
                 </li>
+                <li class="nav-item">
+
+                    @if(Auth::guest())
+                        <a class="nav-link" href="{{ route('login') }}">Login</a>
+                    @endif
+
+                    @if(Auth::check())
+                        {{ Form::open(array('url' => '/logout', 'method' => 'post')) }}
+                            <button class="btn glyphicon-log-out" type="submit">logout</button>
+                        {{ Form::close() }}
+                    @endif
+
+                </li>
             </ul>
         </div>
     </div>
