@@ -38,15 +38,21 @@
                 <span class="info-box-icon"><i class="fa fa-beer"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Drinks</span>
-                    <span class="info-box-number">20 min</span>
+                    <span class="info-box-text">
+                        Drinks
+                    </span>
+
+                    <span class="info-box-number">
+                        20 min
+                    </span>
 
                     <div class="progress">
                         <div class="progress-bar"></div>
                     </div>
+
                     <span class="progress-description">
                         70% Increase in 30 Days
-                      </span>
+                    </span>
                 </div>
             </div>
         </div>

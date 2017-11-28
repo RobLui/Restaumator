@@ -17,17 +17,21 @@ html, body {
 .position-ref {
     position: relative;
 }
+
 .top-right {
     position: absolute;
     right: 10px;
     top: 18px;
 }
+
 .content {
     text-align: center;
 }
+
 .title {
     font-size: 84px;
 }
+
 .links>a {
     color: #636b6f;
     padding: 0 25px;
@@ -37,19 +41,19 @@ html, body {
     text-decoration: none;
     text-transform: uppercase;
 }
+
 .m-b-md {
     margin-bottom: 30px;
 }
 
 .margin-top-6 {
-    margin-top:6em;
+    margin-top: 6em;
 }
 
 .black-bg #mainNav {
     background-color: #fd7e14 !important;
-    height: 7%;
-    position:relative;
-    display:block !important;
-    margin-bottom:4em;
+    color:#fff;
+    position: relative;
+    margin-bottom: 4em;
 }
 

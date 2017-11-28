@@ -36,16 +36,24 @@
 
                     <ul class="restauranttables clearfix">
                         <li class="restauranttable">
-
+                            <div class="symbol text-center bg-red">
+                                <i class="fa fa-hand-stop-o fa-2x"></i>
+                            </div>
                         </li>
                         <li class="restauranttable">
-
+                            <div class="symbol text-center bg-green">
+                                <i class="fa fa-money fa-2x"></i>
+                            </div>
                         </li>
                         <li class="restauranttable">
-
+                            <div class="symbol text-center bg-blue">
+                                <i class="fa fa-credit-card fa-2x"></i>
+                            </div>
                         </li>
                         <li class="restauranttable">
-
+                            <div class="symbol text-center bg-yellow">
+                                <i class="fa fa-glass fa-2x"></i>
+                            </div>
                         </li>
                     </ul>
 

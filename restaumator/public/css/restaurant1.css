@@ -13,44 +13,40 @@
 .restauranttables {
     list-style-type: none;
     padding: 0;
-    /*margin-top: -60px;*/
+    /*margin-t  op: -60px;*/
 }
 
 .restauranttables > li {
     float: left;
 }
 
-.restauranttable:first-child {
-    margin-left: 10%;
-}
-
 .restauranttable {
-    margin-left: 4%;
+    margin-left: 8%;
     display: block;
-    background-color: black;
-    width: 15%;
     height: 40%;
+    width: 15%;
     border-radius: 4px;
+    background-color: black;
 }
 
 .wall {
-    margin-top: 167.5px;
+    margin-top: 10.5em;
     border-top: 5px solid black;
     border-right: 5px solid black;
-    width: 62.5%;
     border-radius: 4px;
+    width: 62.5%;
     height: 11em;
     float: left;
 }
 
 .bar {
-    margin-top: 167.5px;
     background-color: black;
-    width: 25%;
-    height: 10%;
-    float: left;
+    margin-top: 10.5em;
     margin-left: 12.5%;
     border-radius: 4px;
+    width: 25%;
+    height: 8%;
+    float: left;
 }
 
 .door {
@@ -60,4 +56,18 @@
     width:5em;
     transform: rotate(-22.5deg);
     border-radius: 4px;
+}
+
+.symbol {
+    background: orange !important;
+    margin:0 auto;
+    margin-top: 5em;
+    border-radius:50%;
+    width: 5em;
+    height: 5em;
+    display: block;
+    text-align: center;
+}
+.symbol .fa {
+    margin-top:0.75em;
 }
