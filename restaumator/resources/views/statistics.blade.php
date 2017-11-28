@@ -6,6 +6,7 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="{{ route('productpage') }}">Restaumator</a>
+
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -35,7 +36,10 @@
     <div class="row">
         <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="info-box bg-aqua">
-                <span class="info-box-icon"><i class="fa fa-beer"></i></span>
+
+                <span class="info-box-icon">
+                    <i class="fa fa-beer"></i>
+                </span>
 
                 <div class="info-box-content">
                     <span class="info-box-text">
@@ -43,7 +47,7 @@
                     </span>
 
                     <span class="info-box-number">
-                        20 min
+                        Average 20 min
                     </span>
 
                     <div class="progress">
@@ -53,43 +57,69 @@
                     <span class="progress-description">
                         70% Increase in 30 Days
                     </span>
+
                 </div>
+
             </div>
         </div>
 
         <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="info-box bg-orange">
-                <span class="info-box-icon"><i class="fa fa-money"></i></span>
+
+                <span class="info-box-icon">
+                    <i class="fa fa-money"></i>
+                </span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Bill</span>
-                    <span class="info-box-number">50 min</span>
+
+                    <span class="info-box-text">
+                        Bill
+                    </span>
+
+                    <span class="info-box-number">
+                        50 min
+                    </span>
 
                     <div class="progress">
                         <div class="progress-bar"></div>
                     </div>
+
                     <span class="progress-description">
                         70% Increase in 30 Days
-                      </span>
+                    </span>
+
                 </div>
+
             </div>
         </div>
 
         <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="info-box bg-green">
-                <span class="info-box-icon"><i class="fa fa-clock-o"></i></span>
+
+                <span class="info-box-icon">
+                    <i class="fa fa-clock-o"></i>
+                </span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Time spent</span>
-                    <span class="info-box-number">45 min</span>
+
+                    <span class="info-box-text">
+                        Time spent
+                    </span>
+
+                    <span class="info-box-number">
+                        45 min
+                    </span>
 
                     <div class="progress">
                         <div class="progress-bar"></div>
                     </div>
+
                     <span class="progress-description">
                         70% Increase in 30 Days
-                      </span>
+                    </span>
+
                 </div>
+
             </div>
         </div>
     </div>

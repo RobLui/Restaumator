@@ -41,7 +41,7 @@
                             </div>
                         </li>
                         <li class="restauranttable">
-                            <div class="symbol text-center bg-green">
+                            <div class="symbol text-center bg-green blink_text">
                                 <i class="fa fa-money fa-2x"></i>
                             </div>
                         </li>

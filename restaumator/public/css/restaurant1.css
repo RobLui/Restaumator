@@ -68,6 +68,20 @@
     display: block;
     text-align: center;
 }
+
 .symbol .fa {
     margin-top:0.75em;
+}
+
+
+/* BLINKING */
+.blink_text {
+    animation:2s blinker linear infinite;
+    color: red;
+}
+
+@keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
 }

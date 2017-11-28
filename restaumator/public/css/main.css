@@ -9,11 +9,13 @@ html, body {
 .full-height {
     height: 100vh;
 }
+
 .flex-center {
     align-items: center;
     display: flex;
     justify-content: center;
 }
+
 .position-ref {
     position: relative;
 }
@@ -51,7 +53,7 @@ html, body {
 }
 
 .black-bg #mainNav {
-    background-color: #fd7e14 !important;
+    background-color: black !important;
     color:#fff;
     position: relative;
     margin-bottom: 4em;
