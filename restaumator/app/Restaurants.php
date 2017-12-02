@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Restaurants extends Model
 {
     protected $fillable = [
-        'activated_at', 'weight_drink', 'weight_bill','time_drink','time_bill','tablenumber'
+        'activated_at',
+        'weight_drink',
+        'weight_bill',
+        'time_drink',
+        'time_bill',
+        'tablenumber'
     ];
 }
