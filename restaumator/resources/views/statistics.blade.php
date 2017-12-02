@@ -47,7 +47,9 @@
                     </span>
 
                     <span class="info-box-number">
-                        Average 20 min
+                        @if(!empty($average_drink_time))
+                            {{ $average_drink_time }} min
+                        @endif
                     </span>
 
                     <div class="progress">
@@ -77,7 +79,9 @@
                     </span>
 
                     <span class="info-box-number">
-                        50 min
+                        @if(!empty($average_bill_time))
+                            {{ $average_bill_time }} min
+                        @endif
                     </span>
 
                     <div class="progress">
