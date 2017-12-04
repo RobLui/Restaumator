@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class Handler extends Controller
 {
-    public function SetTableActive()
+    public function SetTableActive(Request $req)
     {
-            $tablenumber=$_POST["table"];
+            $tablenumber = $req->table;
             $table=Restauranttables::where("tablenumber",$tablenumber)->first();
             $table->activated_at = date("H:i:s", time()+3600);;
             $table->save();
