@@ -65,5 +65,5 @@
             </div>
         </div>
     </div>
-    <script src="{{ asset('js/settabletoactive.js') }}"></script>
+    <script src="{{ asset('js/tableHandler.js') }}"></script>
 @endsection

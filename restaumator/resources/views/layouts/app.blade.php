@@ -8,8 +8,6 @@
 
         <title>{{ config('app.name', 'Restaumator') }}</title>
 
-        {{-- JQuery --}}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         {{-- CSS --}}
         <link rel="stylesheet" href="{{ asset('css/bootstrap/css/bootstrap.min.css') }}">
@@ -19,10 +17,10 @@
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
         {{-- ADMIN CSS --}}
-        <link rel="stylesheet" href="{{ asset('css/admin/adminLTE.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/admin/AdminLTE.css') }}">
 
-
-        <link rel="stylesheet" href="{{ asset('js/vendor/magnific-popup/magnific-popup.css') }}">
+        {{-- JQuery --}}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         {{-- FONTS --}}
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -36,6 +34,7 @@
 
             @yield('content')
 
+
             <!-- CORE JS -->
             <script src="{{ asset('js/vendor/jquery/jquery.min.js') }}"></script>
             <script src="{{ asset('js/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -43,11 +42,12 @@
             <!-- PLUGIN JS -->
             <script src="{{ asset('js/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
             <script src="{{ asset('js/vendor/scrollreveal/scrollreveal.min.js') }}"></script>
-            <script src="{{ asset('js/vendor/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+{{--            <script src="{{ asset('js/vendor/magnific-popup/jquery.magnific-popup.min.js') }}"></script>--}}
 
             <!-- CUSTOM JS -->
-{{--            <script src="{{ asset('js/app.js') }}"></script>--}}
+            {{-- <script src="{{ asset('js/app.js') }}"></script>--}}
             <script src="{{ asset('js/creative.min.js') }}"></script>
+
         </div>
     </body>
 </html>
