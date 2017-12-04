@@ -34,7 +34,6 @@
                 <div class="maincontent clearfix">
 
                     <ul class="restauranttables clearfix">
-
                         @foreach($tables as $table)
                             <li class="restauranttable">
                                 <button type="button" onclick="ActivateTable( {{ $table->tablenumber }} )" class="btn btn-success activatebutton @if($table->is_active) hide @endif">
@@ -43,34 +42,18 @@
                                 <button type="button" onclick="DeActivateTable( {{ $table->tablenumber }} )" class="btn btn-danger deactivatebutton @if(!$table->is_active) hide @endif">
                                     De-Activate!
                                 </button>
-                                <div class="symbol text-center bg-yellow hide">
-                                <i class="fa fa-glass fa-2x"></i>
-                                </div>
+                                @if(!$table->active_bill)
+                                    <div class="symbol text-center bg-yellow">
+                                        <i class="fa fa-glass fa-2x"></i>
+                                    </div>
+                                @endif
+                                @if(!$table->active_drink)
+                                    <div class="symbol text-center bg-green">
+                                        <i class="fa fa-money fa-2x"></i>
+                                    </div>
+                                @endif
                             </li>
                         @endforeach
-
-                        {{--<li class="restauranttable">--}}
-                            {{--<button type="button" onclick="ActivateTable(2)" class="btn btn-success activatebutton">Activate!</button>--}}
-                            {{--<button type="button" onclick="DeActivateTable(2)" class="btn btn-danger deactivatebutton hide">De-Activate!</button>--}}
-                            {{--<div class="symbol text-center bg-green">--}}
-                                {{--<i class="fa fa-money fa-2x"></i>--}}
-                            {{--</div>--}}
-                        {{--</li>--}}
-                        {{--<li class="restauranttable">--}}
-                            {{--<button type="button" onclick="ActivateTable(3)" class="btn btn-success activatebutton">Activate!</button>--}}
-                            {{--<button type="button" onclick="DeActivateTable(3)" class="btn btn-danger deactivatebutton hide">De-Activate!</button>--}}
-                            {{--<div class="symbol text-center bg-blue">--}}
-                                {{--<i class="fa fa-credit-card fa-2x"></i>--}}
-                            {{--</div>--}}
-                        {{--</li>--}}
-                        {{--<li class="restauranttable">--}}
-                            {{--<button type="button" onclick="ActivateTable(4)" class="btn btn-success activatebutton">Activate!</button>--}}
-                            {{--<button type="button" onclick="DeActivateTable(4)" class="btn btn-danger deactivatebutton hide">De-Activate!</button>--}}
-                            {{--<div class="symbol text-center bg-yellow">--}}
-                                {{--<i class="fa fa-glass fa-2x"></i>--}}
-                            {{--</div>--}}
-                        {{--</li>--}}
-
                     </ul>
 
                     <div class="wall">

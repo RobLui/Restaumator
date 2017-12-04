@@ -61,16 +61,16 @@
 .symbol {
     background: orange !important;
     margin:0 auto;
-    margin-top: 5em;
+    margin-top: 3em;
     border-radius:50%;
-    width: 5em;
-    height: 5em;
+    width: 4em;
+    height: 4em;
     display: block;
     text-align: center;
 }
 
 .symbol .fa {
-    margin-top:0.75em;
+    margin-top:0.5em;
 }
 .activatebutton, .deactivatebutton
 {
