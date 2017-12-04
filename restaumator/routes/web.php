@@ -23,3 +23,6 @@ Route::post('/settabletoactive', 'Handler@SetTableActive')
 
 Route::post('/settabletononactive', 'Handler@SetTableNonActive')
 ;
+
+Route::post('/checkifsomethinghappend', 'Handler@CheckIfSomeThingHappend')
+;

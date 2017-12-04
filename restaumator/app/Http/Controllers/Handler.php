@@ -26,5 +26,18 @@ class Handler extends Controller
         }
         $table->save();
     }
+    public function CheckIfSomeThingHappend()
+    {
+        $tablesdrinksneeded=Restauranttables::where([
+            'is_active' => true,
+            'active_drink' => true,
+        ])->get();
+        $tablespaymentneeded=Restauranttables::where([
+            'is_active' => true,
+            'active_bill' => true,
+        ])->get();
+        $tableswhereneeded=["drinks" => $tablesdrinksneeded,"bills",$tablespaymentneeded];
+        echo json_encode($tableswhereneeded);
+    }
 
 }

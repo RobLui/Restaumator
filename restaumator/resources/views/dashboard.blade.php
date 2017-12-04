@@ -43,8 +43,8 @@
                                 <button type="button" onclick="DeActivateTable( {{ $table->tablenumber }} )" class="btn btn-danger deactivatebutton @if(!$table->is_active) hide @endif">
                                     De-Activate!
                                 </button>
-                                <div class="symbol text-center bg-red">
-                                    <i class="fa fa-hand-stop-o fa-2x"></i>
+                                <div class="symbol text-center bg-yellow hide">
+                                <i class="fa fa-glass fa-2x"></i>
                                 </div>
                             </li>
                         @endforeach

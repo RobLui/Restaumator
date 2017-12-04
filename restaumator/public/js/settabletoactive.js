@@ -39,3 +39,17 @@ function DeActivateTable(tablenumber) {
     })
 
 }
+setInterval(function() {
+    console.log("CALLING");
+    $.ajax({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        type: "POST",
+        url: './checkifsomethinghappend',
+        data: {},
+        success: function (response) {
+            console.log(JSON.parse(response));
+        }
+    })
+}, 3000);
