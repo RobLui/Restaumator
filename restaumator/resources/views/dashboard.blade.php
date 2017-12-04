@@ -30,7 +30,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 wrapper">
                 <div class="maincontent clearfix">
 
                     <ul class="restauranttables clearfix">
@@ -54,6 +54,9 @@
 
                     <div class="wall">
                         <div class="door">
+
+                        </div>
+                        <div class="frontdoor">
 
                         </div>
                     </div>

@@ -57,6 +57,15 @@
     transform: rotate(-22.5deg);
     border-radius: 4px;
 }
+.frontdoor {
+    margin-left: -2%;
+    margin-top: 110px;
+    border-top: 5px solid black;
+    width:5em;
+    transform: rotate(-40.5deg);
+    border-radius: 4px;
+}
+
 
 .symbol {
     background: orange !important;
@@ -78,6 +87,10 @@
 }
 .activatebutton {
    width: 100%;
+}
+.maincontent
+{
+    border: 5px solid black;
 }
 /* BLINKING */
 .blink_text {
