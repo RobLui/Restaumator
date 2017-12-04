@@ -7,19 +7,18 @@ use Illuminate\Http\Request;
 
 class Handler extends Controller
 {
-    public function SetTableActive(Request $req)
-    {
-            $tablenumber = $req->table;
-            $table=Restauranttables::where("tablenumber",$tablenumber)->first();
-            $table->activated_at = date("H:i:s", time()+3600);
+    public function SetTableActive(Request $req) {
+        $tablenumber = $req->table;
+        $table=Restauranttables::where("tablenumber",$tablenumber)->first();
+        $table->activated_at = date("H:i:s", time()+3600);
 
-            if (!$table->is_active) {
-                $table->is_active = true;
-            }
-            $table->save();
+        if (!$table->is_active) {
+            $table->is_active = true;
+        }
+        $table->save();
     }
-    public function SetTableNonActive(Request $req)
-    {
+
+    public function SetTableNonActive(Request $req) {
         $tablenumber = $req->table;
         $table=Restauranttables::where("tablenumber",$tablenumber)->first();
         if ($table->is_active) {

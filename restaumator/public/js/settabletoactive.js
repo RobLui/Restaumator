@@ -20,13 +20,14 @@ function ActivateTable(tablenumber)
         //     $(this).addClass("blink_text");
         // });
     }
+
 function DeActivateTable(tablenumber) {
     $.ajax({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         type: "POST",
-        url: 'settabletononactive',
+        url: './settabletononactive',
         data: {table: tablenumber},
         success: function () {
             console.log("Table De-Activated!");
