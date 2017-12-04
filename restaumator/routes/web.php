@@ -20,3 +20,6 @@ Route::get('/statistics', 'StatisticsController@index')
 
 Route::post('/settabletoactive', 'Handler@SetTableActive')
 ;
+
+Route::post('/settabletononactive', 'Handler@SetTableNonActive')
+;
