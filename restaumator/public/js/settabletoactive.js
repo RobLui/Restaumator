@@ -48,49 +48,44 @@ setInterval(function() {
         url: './checkifsomethinghappend',
         data: {},
         success: function (response) {
+
             console.log(JSON.parse(response));
-            var serverresponse=JSON.parse(response);
-            var drinksid = [];
-            var billsid = [];
-            var drinks=serverresponse.drinks;
-            var bills=serverresponse.bills;
-            for(var i=0; i < drinks.length;i++)
+
+            var serverResponse  = JSON.parse(response);
+            var drinksid        = [];
+            var billsid         = [];
+            var drinks          = serverResponse.drinks;
+            var bills           = serverResponse.bills;
+
+            for(var i = 0; i < drinks.length;i++)
             {
                 drinksid.push(drinks[i].id);
             }
+
             for(var j = 0; j < bills.length;j++)
             {
                 billsid.push(bills[j].id);
             }
-            //SET DRINKICONS
-            var drinkicons=document.getElementsByClassName("drinkicon");
 
-            for(var x = 1 ;x < drinkicons.length++ ;x++)
+            //SET DRINKICONS
+            var drinkicons = document.getElementsByClassName("drinkicon");
+            for(var x = 1 ; x < drinkicons.length++ ;x++)
             {
                 if(drinksid.indexOf(x) > -1)
                 {
                     drinkicons[x-1].classList.remove("hide");
                 }
-                else
-                {
-                    //drinkicons[x-1].classList.add("hide");
-                }
             }
-            //SET BILLICONS
-            var billicons=document.getElementsByClassName("billicon");
 
+            //SET BILLICONS
+            var billicons = document.getElementsByClassName("billicon");
             for(var y=1; y < billicons.length++; y++)
             {
                 if(billsid.indexOf(y) > -1)
                 {
                     billicons[y-1].classList.remove("hide");
                 }
-                else
-                {
-                    //drinkicons[y-1].classList.add("hide");
-                }
             }
-            console.log(billsid);
         }
     })
 }, 3000);

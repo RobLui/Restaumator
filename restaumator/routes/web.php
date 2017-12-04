@@ -30,5 +30,5 @@ Route::post('/checkifsomethinghappend', 'Handler@CheckIfSomeThingHappend')
     ->name('checker')
     ;
 
-Route::post('/checkifsomethinghappend', 'Handler@CheckIfSomeThingHappend')
-;
+//Route::post('/checkifsomethinghappend', 'Handler@CheckIfSomeThingHappend')
+//;
