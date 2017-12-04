@@ -15,6 +15,7 @@ http://www.arduino.org/learning/tutorials/boards-tutorials/webserverblink
 void setup() {
     pinMode(13,OUTPUT);
     Wifi.begin();
+    
     Wifi.println("Web Server is up");
 }
 void loop() {

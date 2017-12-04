@@ -49,6 +49,7 @@ setInterval(function() {
         url: './checkifsomethinghappend',
         data: {},
         success: function (response) {
+
             console.log(JSON.parse(response));
         }
     })

@@ -42,16 +42,16 @@
                                 <button type="button" onclick="DeActivateTable( {{ $table->tablenumber }} )" class="btn btn-danger deactivatebutton @if(!$table->is_active) hide @endif">
                                     De-Activate!
                                 </button>
-                                @if(!$table->active_bill)
+                                {{--@if(!$table->active_bill)--}}
                                     <div class="symbol text-center bg-yellow">
                                         <i class="fa fa-glass fa-2x"></i>
                                     </div>
-                                @endif
-                                @if(!$table->active_drink)
+                                {{--@endif--}}
+                                {{--@if(!$table->active_drink)--}}
                                     <div class="symbol text-center bg-green">
                                         <i class="fa fa-money fa-2x"></i>
                                     </div>
-                                @endif
+                                {{--@endif--}}
                             </li>
                         @endforeach
                     </ul>
