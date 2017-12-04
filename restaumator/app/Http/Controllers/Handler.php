@@ -19,7 +19,6 @@ class Handler extends Controller
             else {
                 $table->is_active = false;
             }
-
             $table->save();
     }
 

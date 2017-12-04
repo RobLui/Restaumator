@@ -42,7 +42,7 @@
                         </li>
                         <li class="restauranttable">
                             <button type="button" onclick="ActivateTable(2)" class="btn btn-secondary activatebutton">Activate!</button>
-                            <div class="symbol text-center bg-green blink_text">
+                            <div class="symbol text-center bg-green">
                                 <i class="fa fa-money fa-2x"></i>
                             </div>
                         </li>
