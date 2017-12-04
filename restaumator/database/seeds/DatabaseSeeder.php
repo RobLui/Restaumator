@@ -18,9 +18,9 @@ class DatabaseSeeder extends Seeder
                  // 2e seed
                     // RestaurantTableSeeder::class,
                  // 3e seed
-                    // UserTableSeeder::class,
+                    //UserTableSeeder::class,
                  // 4e seed
-                     AverageSeeder::class,
+                     //AverageSeeder::class,
              ]
          );
     }
