@@ -14,4 +14,5 @@ class Handler extends Controller
             $table->activated_at = date("H:i:s", time()+3600);;
             $table->save();
     }
+
 }

@@ -9,6 +9,8 @@ function ActivateTable(tablenumber)
                 data: {table: tablenumber},
                 success: function() {
                     console.log("Table Activated!");
+                    buttons=document.getElementsByClassName("activatebutton");
+                    buttons[tablenumber-1].classList.add( "hide" );
                 }
             })
     }

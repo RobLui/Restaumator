@@ -35,25 +35,25 @@
 
                     <ul class="restauranttables clearfix">
                         <li class="restauranttable">
-                            <button type="button" onclick="ActivateTable(1)">Activate!</button>
+                            <button type="button" onclick="ActivateTable(1)" class="btn btn-secondary activatebutton">Activate!</button>
                             <div class="symbol text-center bg-red">
                                 <i class="fa fa-hand-stop-o fa-2x"></i>
                             </div>
                         </li>
                         <li class="restauranttable">
-                            <button type="button" onclick="ActivateTable(2)">Activate!</button>
+                            <button type="button" onclick="ActivateTable(2)" class="btn btn-secondary activatebutton">Activate!</button>
                             <div class="symbol text-center bg-green blink_text">
                                 <i class="fa fa-money fa-2x"></i>
                             </div>
                         </li>
                         <li class="restauranttable">
-                            <button type="button" onclick="ActivateTable(3)">Activate!</button>
+                            <button type="button" onclick="ActivateTable(3)" class="btn btn-secondary activatebutton">Activate!</button>
                             <div class="symbol text-center bg-blue">
                                 <i class="fa fa-credit-card fa-2x"></i>
                             </div>
                         </li>
                         <li class="restauranttable">
-                            <button type="button" onclick="ActivateTable(4)">Activate!</button>
+                            <button type="button" onclick="ActivateTable(4)" class="btn btn-secondary activatebutton">Activate!</button>
                             <div class="symbol text-center bg-yellow">
                                 <i class="fa fa-glass fa-2x"></i>
                             </div>

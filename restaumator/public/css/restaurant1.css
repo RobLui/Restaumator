@@ -72,7 +72,14 @@
 .symbol .fa {
     margin-top:0.75em;
 }
-
+.activatebutton
+{
+   width: 100%;
+}
+.disable
+{
+    display: none;
+}
 
 /* BLINKING */
 .blink_text {
