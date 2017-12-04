@@ -12,4 +12,5 @@ class Restaurants extends Model
         'address',
         'hash',
     ];
+    public $timestamps=false;
 }

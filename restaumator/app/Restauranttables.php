@@ -14,4 +14,5 @@ class Restauranttables extends Model
         'time_bill',
         'tablenumber'
     ];
+    public $timestamps=false;
 }
