@@ -17,3 +17,6 @@ Route::get('/dashboard', 'DashboardController@index')
 Route::get('/statistics', 'StatisticsController@index')
     ->name('statistics')
 ;
+
+Route::post('/settabletoactive', 'Handler@SetTableActive')
+;

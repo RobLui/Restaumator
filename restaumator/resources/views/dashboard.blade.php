@@ -1,7 +1,6 @@
 @extends('layouts.app')
 <link rel="stylesheet" href="{{ asset('css/restaurant1.css') }}">
 @section('content')
-
     <div class="black-bg">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
@@ -36,21 +35,25 @@
 
                     <ul class="restauranttables clearfix">
                         <li class="restauranttable">
+                            <button type="button" onclick="ActivateTable(1)">Activate!</button>
                             <div class="symbol text-center bg-red">
                                 <i class="fa fa-hand-stop-o fa-2x"></i>
                             </div>
                         </li>
                         <li class="restauranttable">
+                            <button type="button" onclick="ActivateTable(2)">Activate!</button>
                             <div class="symbol text-center bg-green blink_text">
                                 <i class="fa fa-money fa-2x"></i>
                             </div>
                         </li>
                         <li class="restauranttable">
+                            <button type="button" onclick="ActivateTable(3)">Activate!</button>
                             <div class="symbol text-center bg-blue">
                                 <i class="fa fa-credit-card fa-2x"></i>
                             </div>
                         </li>
                         <li class="restauranttable">
+                            <button type="button" onclick="ActivateTable(4)">Activate!</button>
                             <div class="symbol text-center bg-yellow">
                                 <i class="fa fa-glass fa-2x"></i>
                             </div>
@@ -67,4 +70,5 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('js/settabletoactive.js') }}"></script>
 @endsection
