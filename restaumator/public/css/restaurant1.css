@@ -76,8 +76,14 @@
 {
    width: 100%;
 }
+.activatebutton {
+   width: 100%;
+}
 
-
+.disable
+{
+    display: none;
+}
 /* BLINKING */
 .blink_text {
     animation:2s blinker linear infinite;
