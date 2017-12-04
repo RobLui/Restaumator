@@ -15,7 +15,7 @@
             <div class="col-lg-4 mr-auto text-center">
                 <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
                 <p>
-                    <a href="mailto:restaumatorAlessandroRobbert@gmail.com">email: Restaumator</a>
+                    <a href="mailto:restaumatorAlessandroRobbert@gmail.com">E-mail</a>
                 </p>
             </div>
         </div>

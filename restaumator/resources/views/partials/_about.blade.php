@@ -2,10 +2,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <h2 class="section-heading text-white">We've got what you need!</h2>
+                <h2 class="section-heading text-white">Restaumator?</h2>
                 <hr class="light my-4">
-                <p class="text-faded mb-4">Restaumator has everything you need to get your people up and running in no time! </p>
-                <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+                <p class="text-faded mb-4">Ever had the awkward experience on a restaurant of calling the waiter without him noticing?
+                    Not with Restaumator! Restaumator automates this process so the waiter comes to you when you need him!
+                </p>
+                <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">How does it work?</a>
             </div>
         </div>
     </div>

@@ -8,8 +8,9 @@
                 <hr>
             </div>
             <div class="col-lg-8 mx-auto">
-                <p class="text-faded mb-5">Shouldn't life be a hell lot easier for people working in busy restaurants?</p>
-                <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Duh! Find out more</a>
+                <p class="text-faded mb-5">A application that allows you to automate your restaurant! No need to wait for the waiter anymore!
+                If your glass is empty the waiter will get a notification so he can anticipate to the customer's needs.</p>
+                <a class="btn btn-light btn-xl js-scroll-trigger" href="#about">Find out more!</a>
             </div>
         </div>
     </div>
