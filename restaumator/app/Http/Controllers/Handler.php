@@ -16,10 +16,16 @@ class Handler extends Controller
             if (!$table->is_active) {
                 $table->is_active = true;
             }
-            else {
-                $table->is_active = false;
-            }
             $table->save();
+    }
+    public function SetTableNonActive(Request $req)
+    {
+        $tablenumber = $req->table;
+        $table=Restauranttables::where("tablenumber",$tablenumber)->first();
+        if ($table->is_active) {
+            $table->is_active = false;
+        }
+        $table->save();
     }
 
 }
