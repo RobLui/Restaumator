@@ -16,11 +16,11 @@ class CreateRestauranttablesTable extends Migration
         Schema::create('restauranttables', function (Blueprint $table) {
             $table->increments('id');
             $table->time("activated_at");
-            $table->integer("weight_drink");
-            $table->integer("weight_bill");
             $table->integer("time_drink");
             $table->integer("time_bill");
             $table->integer("tablenumber");
+            $table->integer("active_drink");
+            $table->integer("active_bill");
             $table->unsignedInteger('id_restaurants');
             $table->foreign('id_restaurants')->references('id')->on('restaurants')->onDelete('cascade');
         });
