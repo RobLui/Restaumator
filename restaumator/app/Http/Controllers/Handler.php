@@ -11,7 +11,7 @@ class Handler extends Controller
     {
             $tablenumber=$_POST["table"];
             $table=Restauranttables::where("tablenumber",$tablenumber)->first();
-            $table->activated_at = date("h:i:s");
+            $table->activated_at = date("H:i:s", time()+3600);;
             $table->save();
     }
 }
