@@ -20,6 +20,7 @@ class RestaurantTableSeeder extends Seeder
                 'time_bill' => 1,
                 'tablenumber' => 1,
                 'id_restaurants' => 1,
+                'is_active' => false
             ],
             [
                 'activated_at' => NOW(),
@@ -29,6 +30,7 @@ class RestaurantTableSeeder extends Seeder
                 'time_bill' => 1,
                 'tablenumber' => 2,
                 'id_restaurants' => 1,
+                'is_active' => false
             ],
             [
                 'activated_at' => NOW(),
@@ -38,6 +40,7 @@ class RestaurantTableSeeder extends Seeder
                 'time_bill' => 1,
                 'tablenumber' => 3,
                 'id_restaurants' => 1,
+                'is_active' => false
             ],
             [
                 'activated_at' => NOW(),
@@ -47,6 +50,7 @@ class RestaurantTableSeeder extends Seeder
                 'time_bill' => 1,
                 'tablenumber' => 4,
                 'id_restaurants' => 1,
+                'is_active' => false
             ]
         ]);
     }
