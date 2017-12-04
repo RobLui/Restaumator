@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
                 // 1ste seed
                     // RestaurantSeeder::class,
                  // 2e seed
-                    // RestaurantTableSeeder::class,
+                     RestaurantTableSeeder::class,
                  // 3e seed
                     //UserTableSeeder::class,
                  // 4e seed
