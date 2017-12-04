@@ -36,7 +36,7 @@ class Handler extends Controller
             'is_active' => true,
             'active_bill' => true,
         ])->get();
-        $tableswhereneeded=["drinks" => $tablesdrinksneeded,"bills",$tablespaymentneeded];
+        $tableswhereneeded=["drinks" => $tablesdrinksneeded,"bills" => $tablespaymentneeded];
         echo json_encode($tableswhereneeded);
     }
 
