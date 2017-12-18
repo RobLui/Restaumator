@@ -50,14 +50,18 @@ class Handler extends Controller
         echo json_encode($tableswhereneeded);
         return;
     }
-    public function SetDrinkIconForTable($tableid)
-    {
-        $tabletoactivatedrink = Restauranttables::where([
-            'is_active' => true,
-            'id' => $tableid,
-        ])->get();
-        $tabletoactivatedrink->active_drink=1;
-        $tabletoactivatedrink->save();
-    }
 
+    public function SetDrinkIconForTable(Request $request, $tableid)
+    {
+        if ($request->isMethod('GET'))
+        {
+                $tabletoactivatedrink = Restauranttables::where([
+                    'is_active' => true,
+                    'id' => $tableid,
+                ])->first();
+                $tabletoactivatedrink->active_drink=1;
+                $tabletoactivatedrink->save();
+        }
+
+    }
 }
