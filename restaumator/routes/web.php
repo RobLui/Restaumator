@@ -30,8 +30,12 @@ Route::post('/checkifsomethinghappend', 'Handler@CheckIfSomeThingHappend')
     ->name('checker')
     ;
 
-Route::get('/setdrinkiconfortable/{tableid}', 'Handler@SetDrinkIconForTable')
+Route::get('/setdrinkiconfortable/{tableid}/restaurant/{restaurantid}/hash/{hash}', 'Handler@SetDrinkIconForTable')
     ->name('setdrinkicon')
+;
+
+Route::get('/setbilliconfortable/{tableid}/restaurant/{restaurantid}/hash/{hash}', 'Handler@SetBillIconForTable')
+    ->name('setbillicon')
 ;
 
 //Route::post('/checkifsomethinghappend', 'Handler@CheckIfSomeThingHappend')
