@@ -8,7 +8,6 @@ function ActivateTable(tablenumber)
         url: './settabletoactive',
         data: {table: tablenumber},
         success: function() {
-            console.log("Table Activated!");
 
             buttons = document.getElementsByClassName("activatebutton");
             buttons[tablenumber-1].classList.add('hide');
@@ -17,7 +16,7 @@ function ActivateTable(tablenumber)
             debuttons[tablenumber - 1].classList.remove("hide");
         }
     })
-    //
+
     // $('.restauranttable').click(function () {
     //     $(this).addClass("blink_text");
     // });
@@ -32,7 +31,6 @@ function DeActivateTable(tablenumber) {
         url: './settabletononactive',
         data: {table: tablenumber},
         success: function () {
-            console.log("Table De-Activated!");
 
             buttons = document.getElementsByClassName("activatebutton");
             buttons[tablenumber - 1].classList.remove("hide");
@@ -54,7 +52,8 @@ setInterval(function(tablenumber) {
         data: {},
         success: function (response) {
 
-            console.log(JSON.parse(response));
+            // SHOWS THE RESPONSE OBJECT (drinks, bills) from the database)
+            // console.log(JSON.parse(response));
 
             var serverResponse = JSON.parse(response);
             var drinksid = [];
@@ -73,31 +72,17 @@ setInterval(function(tablenumber) {
             }
 
             //SET DRINKICONS
-            var drinkicons = document.getElementsByClassName("drinkicon");
-            for(var x = 1 ; x < drinkicons.length++ ;x++)
+            var drinkIcons = document.getElementsByClassName("drinkicon");
+            for(var x = 1 ; x < drinkIcons.length; x++)
             {
-                if(drinksid.indexOf(x) > -1)
-                {
-                    drinkicons[x-1].classList.remove("hide");
-                }
-                else
-                {
-                    drinkicons[x-1].classList.add("hide");
-                }
+                drinksid.indexOf(x) > -1 ? drinkIcons[x-1].classList.remove("hide") : drinkIcons[x-1].classList.add("hide");
             }
 
             //SET BILLICONS
-            var billicons = document.getElementsByClassName("billicon");
-            for(var y = 1; y < billicons.length++; y++)
+            var billIcons = document.getElementsByClassName("billicon");
+            for(var y = 1; y < billIcons.length; y++)
             {
-                if(billsid.indexOf(y) > -1)
-                {
-                    billicons[y-1].classList.remove("hide");
-                }
-                else
-                {
-                    billicons[y-1].classList.add("hide");
-                }
+                billsid.indexOf(y) > -1 ? billIcons[y-1].classList.remove("hide") : billIcons[y-1].classList.add("hide");
             }
         }
     })

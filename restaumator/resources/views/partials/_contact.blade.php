@@ -4,7 +4,7 @@
             <div class="col-lg-8 mx-auto text-center">
                 <h2 class="section-heading">Let's Get In Touch!</h2>
                 <hr class="my-4">
-                <p class="mb-5">Like Restaumator? Contact us asap</p>
+                <p class="mb-5">Like Restaumator? Contact us while they're still in stock!</p>
             </div>
         </div>
         <div class="row">

@@ -27,6 +27,7 @@ class Handler extends Controller
         $tablenumber = $req->table;
 
         $table = Restauranttables::where("tablenumber",$tablenumber)->first();
+
         if ($table->is_active) {
             $table->is_active = false;
         }
@@ -47,12 +48,12 @@ class Handler extends Controller
             'active_bill' => true,
         ])->get();
 
-        $tableswhereneeded = [ "drinks" => $tablesDrinksNeeded, "bills" => $tablesPaymentNeeded ];
-        echo json_encode($tableswhereneeded);
+         $tableswhereneeded = [ "drinks" => $tablesDrinksNeeded, "bills" => $tablesPaymentNeeded ];
+         echo json_encode($tableswhereneeded);
         return;
     }
 
-    public function SetDrinkIconForTable(Request $request, $tableid,$restaurantid,$hash, $action)
+    public function SetDrinkIconForTable(Request $request, $tableid, $restaurantid, $hash, $action)
     {
         if ($request->isMethod('GET'))
         {
@@ -62,15 +63,10 @@ class Handler extends Controller
                 'tablenumber' => $tableid,
             ])->first();
             $restaurant = Restaurants::where("id",$restaurantid)->first();
-            if($hash == $restaurant->hash) //Authentication
+            if($hash == $restaurant->hash) // Authentication
             {
                 $tabletoactivatedrink->active_drink = $action;
                 $tabletoactivatedrink->save();
-                echo json_encode("Accepted!");
-            }
-            else
-            {
-                echo json_encode("No access allowed!");
             }
         }
 
@@ -89,11 +85,6 @@ class Handler extends Controller
             {
                 $tabletoactivatedrink->active_bill = $action;
                 $tabletoactivatedrink->save();
-                echo json_encode("Accepted!");
-            }
-            else
-            {
-                echo json_encode("No access allowed!");
             }
         }
     }
