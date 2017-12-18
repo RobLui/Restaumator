@@ -58,20 +58,23 @@ html, body {
     position: relative;
     margin-bottom: 4em;
 }
-.loginbutton
-{
+
+.loginbutton {
     background-color: #f05f40 !important;
     border-color: #f05f40 !important;
 }
-.loginbutton:hover
-{
+
+.loginbutton:hover {
     cursor: pointer;
     background-color: white !important;
     color: #f05f40 !important;
 }
-.passwordreset
-{
+
+.passwordreset {
     color: #636b6f !important;
     text-decoration: underline;
 }
 
+.margin-center {
+    margin: 0 auto !important;
+}
