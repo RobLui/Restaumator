@@ -1,46 +1,54 @@
-/*
-File: RestClient.ino
-This example make s an HTTP request after 10 seconds and shows the result both in
-serial monitor and in the wifi console of the Arduino Uno WiFi.
-
-Note: works only with Arduino Uno WiFi Developer Edition.
-
-http://www.arduino.org/learning/tutorials/boards-tutorials/restserver-and-restclient
-*/
-
 #include <Wire.h>
 #include <UnoWiFiDevEd.h>
 
+int fsrPin = 0;
+int fsrReading; 
+int fullForce=300;
+int emptyForce=200;
+
+const char* connector = "rest";
+const char* server = "restaumator.robbertluit.be";
+const char* method = "GET";
+const char* activate = "/setdrinkiconfortable/1";
+const char* deactivate = "/setdrinkiconfortable/0";
+
+
 void setup() {
-
-  const char* connector = "rest";
-  const char* server = "restaumator.robbertluit.be";
-  const char* method = "GET";
-  const char* resource = "/setdrinkiconfortable/1";
-
   Serial.begin(9600);
   Ciao.begin();
-
   pinMode(2, INPUT);
-
-  delay(3000);
-  doRequest(connector, server, resource, method);
-}
-
-void loop() {
-
 }
 
 void doRequest(const char* conn, const char* server, const char* command, const char* method){
   CiaoData data = Ciao.write(conn, server, command, method);
   if (!data.isEmpty()){
     Ciao.println( "State: " + String (data.get(1)) );
-    Ciao.println( "Response: " + String (data.get(2)) );
+    Ciao.println( "Response: " + String (data.get(1)) );
     Serial.println( "State: " + String (data.get(1)) );
-    Serial.println( "Response: " + String (data.get(2)) );
+    Serial.println( "Response: " + String (data.get(1)) );
   }
   else{
-    Ciao.println ("Write Error");
-    Serial.println ("Write Error");
+    Ciao.println ("hehe"); 
+    Serial.println ("hehe");
   }
 }
+
+void loop(void) {
+  fsrReading = analogRead(fsrPin);  
+  Serial.print('\n');
+  if(fsrReading < emptyForce)
+  {
+    doRequest(connector, server, activate, method);
+    Serial.print('\n');
+    Serial.print(fsrReading);
+    Serial.print(" LEEG");
+  }
+  if(fsrReading > fullForce)
+  {
+    doRequest(connector, server, deactivate, method);
+    Serial.print('\n');
+    Serial.print(fsrReading);
+    Serial.print(" VOL");
+  }
+}
+
