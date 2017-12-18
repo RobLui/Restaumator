@@ -1,7 +1,7 @@
 int fsrPin = 0;
 int fsrReading; 
-int fullForce=300;
-int emptyForce=200;
+int fullForce=450;
+int emptyForce=400;
 
 void setup(void) {
   Serial.begin(9600);   

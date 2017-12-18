@@ -28,7 +28,7 @@ void doRequest(const char* conn, const char* server, const char* command, const 
     Serial.println( "Response: " + String (data.get(1)) );
   }
   else{
-    Ciao.println ("hehe"); 
+    Ciao.println ("hehe");
     Serial.println ("hehe");
   }
 }
