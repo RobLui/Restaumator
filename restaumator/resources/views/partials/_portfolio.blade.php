@@ -4,18 +4,18 @@
 
             <div class="col-lg-4 col-sm-6">
                 <div class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-                    <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
+                    <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="restaumator device">
                 </div>
             </div>
 
             <div class="col-lg-4 col-sm-6">
                 <div class="portfolio-box" href="img/portfolio/fullsize/2.jpg"></div>
-                <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
+                <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="don't just stand there">
             </div>
 
             <div class="col-lg-4 col-sm-6">
                 <div class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-                    <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
+                    <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="custom restaurant website">
                 </div>
             </div>
 
@@ -30,6 +30,7 @@
                     <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
                 </div>
             </div>
+
             <div class="col-lg-4 col-sm-6">
                 <div class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
                     <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
