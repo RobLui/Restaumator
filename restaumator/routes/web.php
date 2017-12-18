@@ -11,10 +11,12 @@ Route::get('/home', 'HomeController@index')
     ;
 
 Route::get('/dashboard', 'DashboardController@index')
+    ->middleware('auth')
     ->name('dashboard')
     ;
 
 Route::get('/statistics', 'StatisticsController@index')
+    ->middleware('auth')
     ->name('statistics')
     ;
 
