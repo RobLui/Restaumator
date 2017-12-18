@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Restaurants;
 use App\Restauranttables;
 use Illuminate\Http\Request;
 
@@ -51,17 +52,49 @@ class Handler extends Controller
         return;
     }
 
-    public function SetDrinkIconForTable(Request $request, $tableid)
+    public function SetDrinkIconForTable(Request $request, $tableid,$restaurantid,$hash)
     {
         if ($request->isMethod('GET'))
         {
                 $tabletoactivatedrink = Restauranttables::where([
                     'is_active' => true,
-                    'id' => $tableid,
+                    'id_restaurants' => $restaurantid,
+                    'tablenumber' => $tableid,
                 ])->first();
-                $tabletoactivatedrink->active_drink=1;
-                $tabletoactivatedrink->save();
+                $restaurant = Restaurants::where("id",$restaurantid)->first();
+                if($hash == $restaurant->hash) //Authentication
+                {
+                    $tabletoactivatedrink->active_drink=1;
+                    $tabletoactivatedrink->save();
+                    echo json_encode("Accepted!");
+                }
+                else
+                {
+                    echo json_encode("No access allowed!");
+                }
         }
 
+    }
+    public function SetBillIconForTable(Request $request, $tableid, $restaurantid, $hash)
+    {
+        if ($request->isMethod('GET'))
+        {
+            $tabletoactivatedrink = Restauranttables::where([
+                'is_active' => true,
+                'id_restaurants' => $restaurantid,
+                'tablenumber' => $tableid,
+            ])->first();
+            $restaurant = Restaurants::where("id",$restaurantid)->first();
+            if($hash == $restaurant->hash) //Authentication
+            {
+                $tabletoactivatedrink->active_bill=1;
+                $tabletoactivatedrink->save();
+                echo json_encode("Accepted!");
+            }
+            else
+            {
+                echo json_encode("No access allowed!");
+            }
+        }
     }
 }
