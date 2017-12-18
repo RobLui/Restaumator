@@ -52,7 +52,7 @@ class Handler extends Controller
         return;
     }
 
-    public function SetDrinkIconForTable(Request $request, $tableid,$restaurantid,$hash)
+    public function SetDrinkIconForTable(Request $request, $tableid,$restaurantid,$hash, $action)
     {
         if ($request->isMethod('GET'))
         {
@@ -64,7 +64,7 @@ class Handler extends Controller
                 $restaurant = Restaurants::where("id",$restaurantid)->first();
                 if($hash == $restaurant->hash) //Authentication
                 {
-                    $tabletoactivatedrink->active_drink=1;
+                    $tabletoactivatedrink->active_drink=$action;
                     $tabletoactivatedrink->save();
                     echo json_encode("Accepted!");
                 }
@@ -75,7 +75,7 @@ class Handler extends Controller
         }
 
     }
-    public function SetBillIconForTable(Request $request, $tableid, $restaurantid, $hash)
+    public function SetBillIconForTable(Request $request, $tableid, $restaurantid, $hash, $action)
     {
         if ($request->isMethod('GET'))
         {
@@ -87,7 +87,7 @@ class Handler extends Controller
             $restaurant = Restaurants::where("id",$restaurantid)->first();
             if($hash == $restaurant->hash) //Authentication
             {
-                $tabletoactivatedrink->active_bill=1;
+                $tabletoactivatedrink->active_bill=$action;
                 $tabletoactivatedrink->save();
                 echo json_encode("Accepted!");
             }
