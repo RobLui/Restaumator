@@ -3,8 +3,8 @@
 
 int fsrPin = 0;
 int fsrReading; 
-int fullForce=300;
-int emptyForce=200;
+int fullForce=440;
+int emptyForce=430;
 
 const char* connector = "rest";
 const char* server = "restaumator.robbertluit.be";
@@ -49,5 +49,6 @@ void loop(void) {
     Serial.print(fsrReading);
     Serial.print(" VOL");
   }
+  delay(4000);
 }
 
