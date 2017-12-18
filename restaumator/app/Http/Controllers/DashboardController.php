@@ -8,6 +8,10 @@ use function view;
 
 class DashboardController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $tables = Restauranttables::all();

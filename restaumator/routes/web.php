@@ -37,6 +37,3 @@ Route::get('/setdrinkiconfortable/{tableid}/restaurant/{restaurantid}/hash/{hash
 Route::get('/setbilliconfortable/{tableid}/restaurant/{restaurantid}/hash/{hash}', 'Handler@SetBillIconForTable')
     ->name('setbillicon')
 ;
-
-//Route::post('/checkifsomethinghappend', 'Handler@CheckIfSomeThingHappend')
-//;
