@@ -80,6 +80,10 @@ setInterval(function(tablenumber) {
                 {
                     drinkicons[x-1].classList.remove("hide");
                 }
+                else
+                {
+                    drinkicons[x-1].classList.add("hide");
+                }
             }
 
             //SET BILLICONS
@@ -89,6 +93,10 @@ setInterval(function(tablenumber) {
                 if(billsid.indexOf(y) > -1)
                 {
                     billicons[y-1].classList.remove("hide");
+                }
+                else
+                {
+                    billicons[y-1].classList.add("hide");
                 }
             }
         }
