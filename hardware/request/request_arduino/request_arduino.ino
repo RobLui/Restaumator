@@ -9,7 +9,7 @@ int emptyForce=200;
 const char* connector = "rest";
 const char* server = "restaumator.robbertluit.be";
 const char* method = "GET";
-const char* activate = "/setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/1"
+const char* activate = "/setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/1";
 const char* deactivate = "/setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/0";
 
 void setup() {
@@ -44,7 +44,7 @@ void loop(void) {
   }
   if(fsrReading > fullForce)
   {
-    doRequest(connector, server, deactivate + , method);
+    doRequest(connector, server, deactivate , method);
     Serial.print('\n');
     Serial.print(fsrReading);
     Serial.print(" VOL");

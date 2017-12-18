@@ -56,22 +56,22 @@ class Handler extends Controller
     {
         if ($request->isMethod('GET'))
         {
-                $tabletoactivatedrink = Restauranttables::where([
-                    'is_active' => true,
-                    'id_restaurants' => $restaurantid,
-                    'tablenumber' => $tableid,
-                ])->first();
-                $restaurant = Restaurants::where("id",$restaurantid)->first();
-                if($hash == $restaurant->hash) //Authentication
-                {
-                    $tabletoactivatedrink->active_drink=$action;
-                    $tabletoactivatedrink->save();
-                    echo json_encode("Accepted!");
-                }
-                else
-                {
-                    echo json_encode("No access allowed!");
-                }
+            $tabletoactivatedrink = Restauranttables::where([
+                'is_active' => true,
+                'id_restaurants' => $restaurantid,
+                'tablenumber' => $tableid,
+            ])->first();
+            $restaurant = Restaurants::where("id",$restaurantid)->first();
+            if($hash == $restaurant->hash) //Authentication
+            {
+                $tabletoactivatedrink->active_drink = $action;
+                $tabletoactivatedrink->save();
+                echo json_encode("Accepted!");
+            }
+            else
+            {
+                echo json_encode("No access allowed!");
+            }
         }
 
     }
@@ -87,7 +87,7 @@ class Handler extends Controller
             $restaurant = Restaurants::where("id",$restaurantid)->first();
             if($hash == $restaurant->hash) //Authentication
             {
-                $tabletoactivatedrink->active_bill=$action;
+                $tabletoactivatedrink->active_bill = $action;
                 $tabletoactivatedrink->save();
                 echo json_encode("Accepted!");
             }
