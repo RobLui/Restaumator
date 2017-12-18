@@ -119,6 +119,6 @@ html, body {
     opacity: 0.8;
 }
 
-.padding-top-1 {
-    padding-top: 1em;
+.padding-top-half {
+    padding-top: 0.5em;
 }

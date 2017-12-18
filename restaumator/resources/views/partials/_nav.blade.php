@@ -5,7 +5,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto padding-top-1">
+            <ul class="navbar-nav ml-auto padding-top-half">
 
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="{{ route('productpage') }}#service">Service</a>
