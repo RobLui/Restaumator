@@ -1,4 +1,4 @@
-<section id="services">
+<section id="offer">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -12,7 +12,7 @@
             <div class="col-lg-6 col-md-6 text-center">
                 <div class="service-box mt-5 mx-auto">
                     <i class="fa fa-glass fa-4x text-primary mb-3 sr-icons"></i>
-                    <h3 class="mb-3">Glass empty?</h3>
+                    <h3 class="mb-3">Empty Glass?</h3>
                     <p class="text-muted mb-0">With a pressure sensor Restaumator knows when a glass is empty.</p>
                 </div>
             </div>

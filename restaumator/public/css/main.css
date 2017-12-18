@@ -47,6 +47,9 @@ html, body {
 .m-b-md {
     margin-bottom: 30px;
 }
+.margin-top-2 {
+    margin-top: 2em;
+}
 
 .margin-top-6 {
     margin-top: 6em;
@@ -98,4 +101,11 @@ html, body {
 
 .color-white {
     color: white;
+}
+.bolder {
+    font-weight: 600;
+    color: white;
+}
+.block {
+    display: block;
 }

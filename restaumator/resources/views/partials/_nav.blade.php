@@ -10,7 +10,7 @@
                     <a class="nav-link js-scroll-trigger" href="{{ route('productpage') }}#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ route('productpage') }}#services">Service</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ route('productpage') }}#offer">Offer</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="{{ route('productpage') }}#contact">Contact</a>

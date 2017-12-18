@@ -8,9 +8,13 @@
                 <hr>
             </div>
             <div class="col-lg-8 mx-auto">
-                <p class="text-faded mb-5">A application that allows you to automate your restaurant! No need to wait for the waiter anymore!
-                If your glass is empty the waiter will get a notification so he can anticipate to the customer's needs.</p>
-                <a class="btn btn-light btn-xl js-scroll-trigger" href="#about">Find out more!</a>
+                <p class="text-faded mb-5">
+                    <span class="block">Our application allows you to <span class="bolder">automate your restaurant!</span></span>
+                    <span class="block"><span class="bolder">No more</span> clients <span class="bolder">staring around</span>, looking for a waiter!</span>
+                    <span class="block margin-top-2">If glasses become empty, waiters will <span class="bolder">get notifications</span>,</span>
+                    <span class="block">and <span class="bolder">provide the customer</span> for extra juice!</span>
+                </p>
+                <a class="btn btn-light btn-xl js-scroll-trigger" href="#about">Find out more</a>
             </div>
         </div>
     </div>
