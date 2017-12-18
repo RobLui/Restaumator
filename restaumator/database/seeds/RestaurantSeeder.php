@@ -15,7 +15,7 @@ class RestaurantSeeder extends Seeder
             'name' => 1,
             'owner' => 1,
             'address' => 1,
-            'hash' => 1,
+            'hash' => "hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE",
         ]);
     }
 }
