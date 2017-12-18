@@ -102,10 +102,23 @@ html, body {
 .color-white {
     color: white;
 }
+
 .bolder {
     font-weight: 600;
     color: white;
 }
+
 .block {
     display: block;
+}
+
+.transparant-background {
+    padding-top: 3em;
+    padding-bottom: 3em;
+    background-color: rgb(33, 37, 41);
+    opacity: 0.8;
+}
+
+.padding-top-1 {
+    padding-top: 1em;
 }

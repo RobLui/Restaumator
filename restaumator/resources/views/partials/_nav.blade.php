@@ -5,16 +5,20 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto padding-top-1">
+
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="{{ route('productpage') }}#service">Service</a>
+                </li>
+
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="{{ route('productpage') }}#about">About</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ route('productpage') }}#offer">Offer</a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="{{ route('productpage') }}#contact">Contact</a>
                 </li>
+
                 <li class="nav-item">
 
                     @if(Auth::guest())
