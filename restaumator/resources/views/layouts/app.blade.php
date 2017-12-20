@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
     <head>
+        <script>
+            if(navigator.userAgent.indexOf("Speed Insights") == -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-68616424-4', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Restaumator') }}</title>
-
 
         {{-- CSS --}}
         <link rel="stylesheet" href="{{ asset('css/bootstrap/css/bootstrap.min.css') }}">
@@ -27,13 +37,11 @@
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
-
     </head>
     <body id="page-top">
         <div id="app">
 
             @yield('content')
-
 
             <!-- CORE JS -->
             <script src="{{ asset('js/vendor/jquery/jquery.min.js') }}"></script>
