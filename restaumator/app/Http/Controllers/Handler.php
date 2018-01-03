@@ -69,13 +69,14 @@ class Handler extends Controller
                 $tabletoactivatedrink->save();
             }
         }
-
+        return;
     }
+
     public function SetBillIconForTable(Request $request, $tableid, $restaurantid, $hash, $action)
     {
         if ($request->isMethod('GET'))
         {
-            $tabletoactivatedrink = Restauranttables::where([
+            $tabletoactivatebill = Restauranttables::where([
                 'is_active' => true,
                 'id_restaurants' => $restaurantid,
                 'tablenumber' => $tableid,
@@ -83,9 +84,10 @@ class Handler extends Controller
             $restaurant = Restaurants::where("id",$restaurantid)->first();
             if($hash == $restaurant->hash) //Authentication
             {
-                $tabletoactivatedrink->active_bill = $action;
-                $tabletoactivatedrink->save();
+                $tabletoactivatebill->active_bill = $action;
+                $tabletoactivatebill->save();
             }
         }
+        return;
     }
 }
