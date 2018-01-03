@@ -49,12 +49,6 @@
                                     <i class="fa fa-money fa-2x"></i>
                                 </div>
                             </li>
-                        <div class="wrapper">
-                                <p><span id="seconds">00</span>:<span id="tens">00</span></p>
-                                <button id="button-start">Start</button>
-                                <button id="button-stop">Stop</button>
-                                <button id="button-reset">Reset</button>
-                        </div>
                         @endforeach
                     </ul>
 
