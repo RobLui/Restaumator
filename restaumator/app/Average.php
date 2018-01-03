@@ -11,4 +11,5 @@ class Average extends Model
         'bill_time',
         'id_restaurants'
     ];
+    public $timestamps=false;
 }

@@ -51,7 +51,7 @@ class Handler extends Controller
 
         $table->save();
 
-        $average=New Average;
+        $average=new Average();
         $average->bill_time=$timeFormat;
         $average->drink_time=$timeFormat;
         $average->id_restaurants=1;
