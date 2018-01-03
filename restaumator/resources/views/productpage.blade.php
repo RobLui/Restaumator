@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('content')
     @include('partials._nav')
 
     @include('partials._header')
@@ -15,4 +15,6 @@
     @include('partials._experience')
 
     @include('partials._footer')
+
+@endsection
 

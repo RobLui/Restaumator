@@ -34,7 +34,7 @@ class StatisticsController extends Controller
         $minsF = floor($total / 60 % 60);
         $secsF= floor($total % 60);
         $timeFormat = sprintf('%02d:%02d:%02d', $hoursF, $minsF, $secsF);
-        
+
 
         return view('statistics')->with("bill_time",$timeFormat);
     }
