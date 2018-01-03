@@ -50,6 +50,23 @@
                                 </div>
                             </li>
                         @endforeach
+
+                        <div><strong>Values:</strong></div>
+                            <div id="gettingValuesExample">
+                                <span class="days">0</span><span> days</span>
+                                <span class="hours">0</span><span> hours</span>
+                                <span class="minutes">0</span><span> minutes</span>
+                                <span class="seconds">0</span><span> seconds</span>
+                                <span class="secondTenths">0</span><span> tenth of seconds</span>
+                            </div>
+                        <div><strong>Total Values:</strong></div>
+                            <div id="gettingTotalValuesExample">
+                                <span class="days">0</span><span> days</span>
+                                <span class="hours">0</span><span> hours</span>
+                                <span class="minutes">0</span><span> minutes</span>
+                                <span class="seconds">0</span><span> seconds</span>
+                                <span class="secondTenths">0</span><span> tenth of seconds</span>
+                            </div>
                     </ul>
 
                     <div class="wall">

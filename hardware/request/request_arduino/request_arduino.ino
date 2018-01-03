@@ -40,7 +40,7 @@ void loop(void) {
   if(fsrReading < emptyForce)
   {
     truefalse = true;
-    delay(20000);
+    delay(5000);
   }
   
   if(fsrReading < emptyForce && truefalse == true)
