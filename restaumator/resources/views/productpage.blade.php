@@ -4,13 +4,13 @@
 
     @include('partials._header')
 
+    @include('partials._video')
+
     @include('partials._services')
 
     @include('partials._experience')
 
     @include('partials._about')
-
-    @include('partials._portfolio')
 
     @include('partials._contact')
 
