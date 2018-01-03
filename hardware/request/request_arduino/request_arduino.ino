@@ -5,6 +5,7 @@ int fsrPin = 0;
 int fsrReading; 
 int fullForce=440;
 int emptyForce=430;
+boolean truefalse=false;
 
 const char* connector = "rest";
 const char* server = "restaumator.robbertluit.be";
@@ -35,15 +36,24 @@ void doRequest(const char* conn, const char* server, const char* command, const 
 void loop(void) {
   fsrReading = analogRead(fsrPin);  
   Serial.print('\n');
+  
   if(fsrReading < emptyForce)
+  {
+    truefalse = true;
+    delay(20000);
+  }
+  
+  if(fsrReading < emptyForce && truefalse == true)
   {
     doRequest(connector, server, activate, method);
     Serial.print('\n');
     Serial.print(fsrReading);
     Serial.print(" LEEG");
   }
+  
   if(fsrReading > fullForce)
   {
+    truefalse = false;
     doRequest(connector, server, deactivate , method);
     Serial.print('\n');
     Serial.print(fsrReading);
