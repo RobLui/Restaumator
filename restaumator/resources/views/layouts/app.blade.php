@@ -54,7 +54,6 @@
             <!-- CUSTOM JS -->
             {{-- <script src="{{ asset('js/app.js') }}"></script>--}}
             <script src="{{ asset('js/creative.min.js') }}"></script>
-            <script src="{{ asset('js/handler.js') }}"></script>
 
         </div>
     </body>

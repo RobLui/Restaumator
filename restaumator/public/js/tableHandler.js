@@ -16,10 +16,6 @@ function ActivateTable(tablenumber)
             debuttons[tablenumber - 1].classList.remove("hide");
         }
     })
-
-    // $('.restauranttable').click(function () {
-    //     $(this).addClass("blink_text");
-    // });
 }
 
 function DeActivateTable(tablenumber) {
