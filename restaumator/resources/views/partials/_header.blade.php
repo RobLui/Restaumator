@@ -14,7 +14,7 @@
                     <span class="block margin-top-2">If glasses become empty, waiters will get<span class="bolder"> automatic notifications</span></span>
                     <span class="block">to <span class="bolder">provide the customer</span> an extra drink!</span>
                 </p>
-                <a class="btn btn-light btn-xl js-scroll-trigger" href="#about">Find out more</a>
+                <a class="btn btn-light btn-xl js-scroll-trigger" href="#video">Find out more</a>
             </div>
         </div>
     </div>
