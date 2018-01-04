@@ -15,7 +15,7 @@ class CreateAveragesTable extends Migration
     {
         Schema::create('averages', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer("bill_time")->nullable();
+            $table->time("bill_time")->nullable();
             $table->integer("drink_time")->nullable();
             $table->unsignedInteger('id_restaurants');
             $table->foreign('id_restaurants')

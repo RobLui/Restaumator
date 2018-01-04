@@ -19,19 +19,23 @@
                     <a class="nav-link js-scroll-trigger" href="{{ route('productpage') }}#contact">Contact</a>
                 </li>
 
-                <li class="nav-item">
-
-                    @if(Auth::guest())
+                @if(Auth::guest())
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">Login</a>
-                    @endif
+                    </li>
+                @endif
 
-                    @if(Auth::check())
+                @if(Auth::check())
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
                         {{ Form::open(array('url' => '/logout', 'method' => 'post')) }}
-                            <button class="btn glyphicon-log-out" type="submit">logout</button>
+                        <button class="btn glyphicon-log-out" type="submit">Logout</button>
                         {{ Form::close() }}
-                    @endif
+                    </li>
+                @endif
 
-                </li>
             </ul>
         </div>
     </div>
