@@ -11,9 +11,10 @@ class AverageSeeder extends Seeder
      */
     public function run()
     {
+
         DB::table('averages')->insert([
             'bill_time' => '20',
-            'drink_time' => '15',
+            'drink_time' => new DateTime('now'),
             'id_restaurants' => 1
         ]);
     }
