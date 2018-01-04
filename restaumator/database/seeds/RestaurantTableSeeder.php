@@ -14,8 +14,8 @@ class RestaurantTableSeeder extends Seeder
         DB::table('restauranttables')->insert([
             [
                 'activated_at' => NOW(),
-                'time_drink' => 1,
-                'time_bill' => 1,
+                'time_drink' => '00:00:00',
+                'time_bill' => '00:00:00',
                 'tablenumber' => 1,
                 'id_restaurants' => 1,
                 'active_drink' => false,
@@ -24,8 +24,8 @@ class RestaurantTableSeeder extends Seeder
             ],
             [
                 'activated_at' => NOW(),
-                'time_drink' => 1,
-                'time_bill' => 1,
+                'time_drink' => '00:00:00',
+                'time_bill' => '00:00:00',
                 'tablenumber' => 2,
                 'id_restaurants' => 1,
                 'active_drink' => false,
@@ -34,8 +34,8 @@ class RestaurantTableSeeder extends Seeder
             ],
             [
                 'activated_at' => NOW(),
-                'time_drink' => 1,
-                'time_bill' => 1,
+                'time_drink' => '00:00:00',
+                'time_bill' => '00:00:00',
                 'tablenumber' => 3,
                 'id_restaurants' => 1,
                 'active_drink' => false,
@@ -44,8 +44,8 @@ class RestaurantTableSeeder extends Seeder
             ],
             [
                 'activated_at' => NOW(),
-                'time_drink' => 1,
-                'time_bill' => 1,
+                'time_drink' => '00:00:00',
+                'time_bill' => '00:00:00',
                 'tablenumber' => 4,
                 'id_restaurants' => 1,
                 'active_drink' => false,

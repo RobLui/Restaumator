@@ -16,8 +16,8 @@ class CreateRestauranttablesTable extends Migration
         Schema::create('restauranttables', function (Blueprint $table) {
             $table->increments('id');
             $table->time("activated_at");
-            $table->integer("time_drink");
-            $table->integer("time_bill");
+            $table->time("time_drink");
+            $table->time("time_bill");
             $table->integer("tablenumber");
             $table->integer("active_drink");
             $table->integer("active_bill");

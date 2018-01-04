@@ -12,5 +12,5 @@ class Average extends Model
         'id_restaurants'
     ];
 
-//    public $timestamps = false;
+    public $timestamps = false;
 }

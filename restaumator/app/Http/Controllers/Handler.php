@@ -6,7 +6,9 @@ use App\Average;
 use App\Restaurants;
 use App\Restauranttables;
 use Illuminate\Http\Request;
-use PhpParser\Node\Expr\New_;
+use function floor;
+use function date;
+use function strtotime;
 
 class Handler extends Controller
 {
@@ -21,7 +23,6 @@ class Handler extends Controller
         }
 
         $table->save();
-        return;
     }
 
     public function SetTableNonActive(Request $req) {
@@ -34,30 +35,29 @@ class Handler extends Controller
         }
 //        dd($table);
 
-//        $tablewasactivatedat = $table->activated_at;
-//        $timestamp = strtotime(date('H:i:s')) + 60*60;
-//        $currenthour = date('H:i:s', $timestamp);
-//
-//        $start = strtotime($tablewasactivatedat);
-//        $end = strtotime($currenthour);
-//        $seconds = $end - $start;
-//
-//        $hours = floor($seconds / 3600);
-//        $mins = floor($seconds / 60 % 60);
-//        $secs = floor($seconds % 60);
-//        $timeFormat = sprintf('%02d:%02d:%02d', $hours, $mins, $secs);
-//
-//
-//        $table->time_bill = $timeFormat;
+        $tablewasactivatedat = $table->activated_at;
+        $timestamp = strtotime(date('H:i:s')) + 60*60;
+        $currenthour = date('H:i:s', $timestamp);
+
+        $start = strtotime($tablewasactivatedat);
+        $end = strtotime($currenthour);
+        $seconds = $end - $start;
+
+        $hours = floor($seconds / 3600);
+        $mins = floor($seconds / 60 % 60);
+        $secs = floor($seconds % 60);
+        $timeFormat = sprintf('%02d:%02d:%02d', $hours, $mins, $secs);
+
+        $table->time_bill = $timeFormat;
 
         $table->save();
-//
-//        $average=new Average();
-//        $average->bill_time = $timeFormat;
-//        $average->drink_time = $timeFormat;
-//        $average->id_restaurants = 1;
-//
-//        $average->save();
+
+        $average = new Average();
+        $average->bill_time = $timeFormat;
+        $average->drink_time = $timeFormat;
+        $average->id_restaurants = 1;
+
+        $average->save();
     }
 
     public function CheckIfSomeThingHappend() {
