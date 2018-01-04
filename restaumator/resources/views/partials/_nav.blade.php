@@ -31,7 +31,7 @@
                     </li>
                     <li class="nav-item">
                         {{ Form::open(array('url' => '/logout', 'method' => 'post')) }}
-                        <button class="btn glyphicon-log-out" type="submit">Logout</button>
+                        <button class="btn glyphicon-log-out " type="submit">Logout</button>
                         {{ Form::close() }}
                     </li>
                 @endif

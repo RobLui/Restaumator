@@ -17,30 +17,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-
+        {{--APPLE--}}
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-title" content="" />
+        <meta name="apple-mobile-web-app-title" content="Restaumator" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+        {{--GENERAL--}}
         <meta name="description" content="Restaurant Automator" />
         <meta name="title" content="Restaumator">
         <meta name="locale" content="en">
         <meta name="keywords" content="Restaurant,Automator,Drinks,Restaumator">
         <meta name="author" content="Alessandro Aussems & Robbert Luit">
-        <meta name="publisher" content="Alessandro Aussems & Robber Luit">
+        <meta name="publisher" content="Alessandro Aussems & Robbert Luit">
         <meta name="robots" content="all">
 
+        {{--FACEBOOK--}}
         <meta property="og:title" content="Restaumator" />
         <meta property="og:site_name" content="Restaumator" />
         <meta property="og:description" content="Restaurant Automator" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="{{asset("img/logo.png")}}" />
-        <meta property="og:url" content="{{asset("img/logo.png")}}" />
+        <meta property="og:image" content="{{ asset("img/logo.png") }}" />
+        <meta property="og:url" content="{{ asset("img/logo.png") }}" />
 
+        {{--TWITTER--}}
         <meta property="twitter:card" content="summary" />
         <meta property="twitter:title" content="Restaumator" />
         <meta property="twitter:description" content="Restaurant Automator" />
-        <meta property="twitter:image" content="{{asset("img/logo.png")}}" />
-        <meta property="twitter:url" content="{{asset("img/logo.png")}}" />
+        <meta property="twitter:image" content="{{ asset("img/logo.png") }}" />
+        <meta property="twitter:url" content="{{ asset("img/logo.png") }}" />
 
         <link rel="icon" type="image/png" href="{{asset("img/logo.png")}}">
         <link rel="canonical" href="https://restaumator.com">

@@ -6,6 +6,7 @@ html, body {
     height: 100vh;
     margin: 0;
 }
+
 .full-height {
     height: 100vh;
 }
@@ -46,6 +47,10 @@ html, body {
 
 .m-b-md {
     margin-bottom: 30px;
+}
+
+.margin-bottom-minus-1 {
+    margin-bottom: -1em;
 }
 
 .margin-top-2 {
@@ -127,12 +132,14 @@ html, body {
 .padding-top-half {
     padding-top: 0.5em;
 }
+
 .videoWrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
     padding-top: 25px;
     height: 0;
 }
+
 .videoWrapper iframe {
     position: absolute;
     top: 0;

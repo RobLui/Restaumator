@@ -1,36 +1,8 @@
 @extends('layouts.app')
 <link rel="stylesheet" href="{{ asset('css/restaurant1.css') }}">
 @section('content')
-    <div class="black-bg">
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="{{ route('productpage') }}">Restaumator</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                        data-target="#navbarResponsive" aria-controls="navbarResponsive"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-
-                        <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="{{ route('statistics') }}">Statistics</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="{{ route('dashboard') }}">Dashboard</a>
-                        </li>
-                        <li class="nav-item">
-                            {{ Form::open(array('url' => '/logout', 'method' => 'post')) }}
-                            <button class="btn btn-default" type="submit">Logout</button>
-                            {{ Form::close() }}
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </nav>
-    </div>
+    @include('partials._logged-in-nav')
 
     <div class="container">
         <div class="row">
