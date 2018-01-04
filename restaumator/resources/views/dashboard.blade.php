@@ -20,7 +20,11 @@
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="{{ route('dashboard') }}">Dashboard</a>
                         </li>
-
+                        <li class="nav-item">
+                            {{ Form::open(array('url' => '/logout', 'method' => 'post')) }}
+                            <button class="btn btn-default" type="submit">Logout</button>
+                            {{ Form::close() }}
+                        </li>
                     </ul>
                 </div>
 

@@ -28,36 +28,36 @@ class Handler extends Controller
 
         $tablenumber = $req->table;
 
-        $table = Restauranttables::where("tablenumber",$tablenumber)->first();
-
+        $table = Restauranttables::where("tablenumber", $tablenumber)->first();
         if ($table->is_active) {
             $table->is_active = false;
         }
-        $tablewasactivatedat=$table->activated_at;
-        $timestamp = strtotime(date('H:i:s')) + 60*60;
-        $currenthour = date('H:i:s', $timestamp);
+//        dd($table);
 
-        $start = strtotime($tablewasactivatedat);
-        $end = strtotime($currenthour);
-        $seconds = $end - $start;
-
-        $hours = floor($seconds / 3600);
-        $mins = floor($seconds / 60 % 60);
-        $secs = floor($seconds % 60);
-        $timeFormat = sprintf('%02d:%02d:%02d', $hours, $mins, $secs);
-
-
-        $table->time_bill=$timeFormat;
+//        $tablewasactivatedat = $table->activated_at;
+//        $timestamp = strtotime(date('H:i:s')) + 60*60;
+//        $currenthour = date('H:i:s', $timestamp);
+//
+//        $start = strtotime($tablewasactivatedat);
+//        $end = strtotime($currenthour);
+//        $seconds = $end - $start;
+//
+//        $hours = floor($seconds / 3600);
+//        $mins = floor($seconds / 60 % 60);
+//        $secs = floor($seconds % 60);
+//        $timeFormat = sprintf('%02d:%02d:%02d', $hours, $mins, $secs);
+//
+//
+//        $table->time_bill = $timeFormat;
 
         $table->save();
-
-        $average=new Average();
-        $average->bill_time=$timeFormat;
-        $average->drink_time=$timeFormat;
-        $average->id_restaurants=1;
-
-        $average->save();
-        return;
+//
+//        $average=new Average();
+//        $average->bill_time = $timeFormat;
+//        $average->drink_time = $timeFormat;
+//        $average->id_restaurants = 1;
+//
+//        $average->save();
     }
 
     public function CheckIfSomeThingHappend() {
