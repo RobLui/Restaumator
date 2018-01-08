@@ -147,7 +147,32 @@ html, body {
     width: 100%;
     height: 100%;
 }
+
 .restaurantname{
     width: 100%;
     text-align: center;
+}
+
+
+.height-5 {
+    height: 5em;
+    display: block;
+}
+
+.height-20 {
+    height: 20em;
+    display: block;
+    width:100%;
+}
+
+.info-box-icon {
+    width: 100% !important;
+}
+
+.top-1 {
+    margin-top: 1em;
+}
+
+.margin-top-5 p{
+    margin-top: 5em;
 }
