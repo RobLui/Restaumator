@@ -67,7 +67,8 @@ class StatisticsController extends Controller
 
         }
         else {
-            $timeFormat = sprintf('%02d:%02d:%02d', 0, 0, 0);
+            $timeFormatB = sprintf('%02d:%02d:%02d', 0, 0, 0);
+            $timeFormatD = sprintf('%02d:%02d:%02d', 0, 0, 0);
         }
 
         return view('statistics')
