@@ -5,7 +5,8 @@
     @include('partials._logged-in-nav')
 
     <div class="container">
-        <h1 class="restaurantname">{{$restaurant->name}}</h1>
+        {{--<h1 class="restaurantname"> {{$restaurant->name}} </h1>--}}
+        <img class="restaurantname margin-top-minus-3" src="{{ asset('img/het_huis_pixelated.png') }}" alt="Restaurant Het Huis">
         <div class="row">
             <div class="col-md-12 wrapper">
                 <div class="maincontent clearfix">

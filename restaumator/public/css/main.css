@@ -149,10 +149,11 @@ html, body {
 }
 
 .restaurantname{
-    width: 100%;
+    width: 15%;
+    margin: 0 auto;
+    display: block;
     text-align: center;
 }
-
 
 .height-5 {
     height: 5em;
@@ -175,4 +176,8 @@ html, body {
 
 .margin-top-5 p{
     margin-top: 5em;
+}
+
+.margin-top-minus-3 {
+    margin-top: -3em;
 }

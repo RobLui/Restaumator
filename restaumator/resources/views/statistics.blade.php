@@ -5,9 +5,9 @@
 @include('partials._logged-in-nav')
 
 <div class="container">
-    <h1 class="restaurantname">{{ $restaurant->name }}</h1>
+    <h1 class="restaurantname"> {{ $restaurant->name }} </h1>
     <div class="jumbotron text-center bg-primary">
-        <h2 class="text-white">Your restaurant statistics</h2>
+        <h2 class="text-white"> Your restaurant statistics </h2>
     </div>
 
     <div class="row">
