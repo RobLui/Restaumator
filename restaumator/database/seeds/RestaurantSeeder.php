@@ -12,9 +12,9 @@ class RestaurantSeeder extends Seeder
     public function run()
     {
         DB::table('restaurants')->insert([
-            'name' => 1,
-            'owner' => 1,
-            'address' => 1,
+            'name' => "Het Huis",
+            'owner' => "Sam",
+            'address' => "Salesianenlaan 90, 2660 Antwerpen",
             'hash' => "hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE",
         ]);
     }

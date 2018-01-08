@@ -49,6 +49,8 @@ class Handler extends Controller
         $timeFormat = sprintf('%02d:%02d:%02d', $hours, $mins, $secs);
 
         $table->time_bill = $timeFormat;
+        $table->active_drink=0;
+        $table->active_bill=0;
 
         $table->save();
 

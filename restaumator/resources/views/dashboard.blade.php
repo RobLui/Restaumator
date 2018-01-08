@@ -5,10 +5,10 @@
     @include('partials._logged-in-nav')
 
     <div class="container">
+        <h1 class="restaurantname">{{$restaurant->name}}</h1>
         <div class="row">
             <div class="col-md-12 wrapper">
                 <div class="maincontent clearfix">
-
                     <ul class="restauranttables clearfix">
                         @foreach($tables as $table)
                             <li class="restauranttable">
