@@ -36,27 +36,35 @@ class Handler extends Controller
 //        dd($table);
 
         $tablewasactivatedat = $table->activated_at;
-        $timestamp = strtotime(date('H:i:s')) + 60*60;
-        $currenthour = date('H:i:s', $timestamp);
+
 
         $start = strtotime($tablewasactivatedat);
-        $end = strtotime($currenthour);
-        $seconds = $end - $start;
 
-        $hours = floor($seconds / 3600);
-        $mins = floor($seconds / 60 % 60);
-        $secs = floor($seconds % 60);
-        $timeFormat = sprintf('%02d:%02d:%02d', $hours, $mins, $secs);
+        $endbill = strtotime($table->time_bill);
+        $secondsbill = $endbill - $start;
+        $hoursbill = floor($secondsbill / 3600);
+        $minsbill = floor($secondsbill / 60 % 60);
+        $secsbill = floor($secondsbill % 60);
+        $timeFormatbill = sprintf('%02d:%02d:%02d', $hoursbill, $minsbill, $secsbill);
 
-        $table->time_bill = $timeFormat;
+        $enddrink = strtotime($table->time_drink);
+        $secondsdrink = $enddrink - $start;
+
+        $hoursdrink = floor($secondsdrink / 3600);
+        $minsdrink = floor($secondsdrink / 60 % 60);
+        $secsdrink = floor($secondsdrink % 60);
+        $timeFormatdrink = sprintf('%02d:%02d:%02d', $hoursdrink, $minsdrink, $secsdrink);
+
+        $table->time_bill = $timeFormatbill;
+        $table->time_drink = $timeFormatdrink;
         $table->active_drink=0;
         $table->active_bill=0;
 
         $table->save();
 
         $average = new Average();
-        $average->bill_time = $timeFormat;
-        $average->drink_time = $timeFormat;
+        $average->bill_time = $timeFormatbill;
+        $average->drink_time = $timeFormatdrink;
         $average->id_restaurants = 1;
 
         $average->save();
@@ -91,6 +99,9 @@ class Handler extends Controller
             $restaurant = Restaurants::where("id",$restaurantid)->first();
             if($hash == $restaurant->hash) // Authentication
             {
+                $timestamp = strtotime(date('H:i:s')) + 60*60;
+                $currenthour = date('H:i:s', $timestamp);
+                $tabletoactivatedrink->time_drink=$currenthour;
                 $tabletoactivatedrink->active_drink = $action;
                 $tabletoactivatedrink->save();
             }
@@ -110,6 +121,9 @@ class Handler extends Controller
             $restaurant = Restaurants::where("id",$restaurantid)->first();
             if($hash == $restaurant->hash) //Authentication
             {
+                $timestamp = strtotime(date('H:i:s')) + 60*60;
+                $currenthour = date('H:i:s', $timestamp);
+                $tabletoactivatebill->time_bill=$currenthour;
                 $tabletoactivatebill->active_bill = $action;
                 $tabletoactivatebill->save();
             }

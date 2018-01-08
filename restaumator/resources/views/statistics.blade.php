@@ -5,7 +5,7 @@
 @include('partials._logged-in-nav')
 
 <div class="container">
-
+    <h1 class="restaurantname">{{$restaurant->name}}</h1>
     <div class="jumbotron text-center bg-primary">
         <h2 class="text-white">Your restaurant statistics</h2>
     </div>
@@ -24,9 +24,7 @@
                     </span>
 
                     <span class="info-box-number">
-                        @if(!empty($drink_time))
-                            {{ $drink_time }} min
-                        @endif
+                            {{ $drink_time }}
                     </span>
 
                 </div>
