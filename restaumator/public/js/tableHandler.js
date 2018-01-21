@@ -29,10 +29,10 @@ function DeActivateTable(tablenumber) {
         success: function () {
 
             buttons = document.getElementsByClassName("activatebutton");
-            buttons[tablenumber - 1].classList.remove("hide");
+            buttons[tablenumber-1].classList.remove("hide");
 
             debuttons = document.getElementsByClassName("deactivatebutton");
-            debuttons[tablenumber - 1].classList.add("hide");
+            debuttons[tablenumber-1].classList.add("hide");
         }
     })
 
@@ -69,14 +69,14 @@ setInterval(function(tablenumber) {
 
             //SET DRINKICONS
             var drinkIcons = document.getElementsByClassName("drinkicon");
-            for(var x = 1 ; x < drinkIcons.length; x++)
+            for(var x = 1 ; x <= drinkIcons.length; x++)
             {
                 drinksid.indexOf(x) > -1 ? drinkIcons[x-1].classList.remove("hide") : drinkIcons[x-1].classList.add("hide");
             }
 
             //SET BILLICONS
             var billIcons = document.getElementsByClassName("billicon");
-            for(var y = 1; y < billIcons.length; y++)
+            for(var y = 1; y <= billIcons.length; y++)
             {
                 billsid.indexOf(y) > -1 ? billIcons[y-1].classList.remove("hide") : billIcons[y-1].classList.add("hide");
             }

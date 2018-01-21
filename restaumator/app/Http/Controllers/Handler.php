@@ -33,41 +33,42 @@ class Handler extends Controller
         if ($table->is_active) {
             $table->is_active = false;
         }
-//        dd($table);
 
+        // LOS
         $tablewasactivatedat = $table->activated_at;
-
-
         $start = strtotime($tablewasactivatedat);
 
         $endbill = strtotime($table->time_bill);
         $secondsbill = $endbill - $start;
-        $hoursbill = floor($secondsbill / 3600);
-        $minsbill = floor($secondsbill / 60 % 60);
-        $secsbill = floor($secondsbill % 60);
+        $hoursbill = floor($secondsbill/3600);
+        $minsbill = floor($secondsbill/60%60);
+        $secsbill = floor($secondsbill%60);
         $timeFormatbill = sprintf('%02d:%02d:%02d', $hoursbill, $minsbill, $secsbill);
 
         $enddrink = strtotime($table->time_drink);
         $secondsdrink = $enddrink - $start;
 
-        $hoursdrink = floor($secondsdrink / 3600);
-        $minsdrink = floor($secondsdrink / 60 % 60);
-        $secsdrink = floor($secondsdrink % 60);
+        $enddrink = strtotime($table->time_drink);
+        $secondsdrink = $enddrink - $start;
+        $hoursdrink = floor($secondsdrink/3600);
+        $minsdrink = floor($secondsdrink/60%60);
+        $secsdrink = floor($secondsdrink%60);
+
         $timeFormatdrink = sprintf('%02d:%02d:%02d', $hoursdrink, $minsdrink, $secsdrink);
 
-        $table->time_bill = $timeFormatbill;
-        $table->time_drink = $timeFormatdrink;
+        $table->time_bill = "00:00:00";
+        $table->time_drink =  "00:00:00";
         $table->active_drink=0;
         $table->active_bill=0;
-
         $table->save();
 
         $average = new Average();
-        $average->bill_time = $timeFormatbill;
-        $average->drink_time = $timeFormatdrink;
+        $average->bill_time = "00:00:00";
+        $average->drink_time = "00:00:00";
         $average->id_restaurants = 1;
 
         $average->save();
+        return;
     }
 
     public function CheckIfSomeThingHappend() {

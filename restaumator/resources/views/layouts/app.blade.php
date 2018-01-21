@@ -80,11 +80,11 @@
             <script src="{{ asset('js/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
             <!-- PLUGIN JS -->
-            <script src="{{ asset('js/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+            <script src="{{ asset('js/vendor/jquery-easing/jquery.easing.js') }}"></script>
             <script src="{{ asset('js/vendor/scrollreveal/scrollreveal.min.js') }}"></script>
 
             <!-- CUSTOM JS -->
-            {{-- <script src="{{ asset('js/app.js') }}"></script>--}}
+            {{--<script src="{{ asset('js/app.js') }}"></script>--}}
             <script src="{{ asset('js/creative.min.js') }}"></script>
 
         </div>
