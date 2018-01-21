@@ -1,5 +1,14 @@
 #include <Wire.h>
-#include <UnoWiFiDevEd.h>
+#include <SPI.h>
+#include <WiFi.h>
+
+char ssid[] = "WiFi-2.4-B948";
+char pass[] = "wwnpen5z62d4a";
+int keyIndex = 0;
+
+int status = WL_IDLE_STATUS;
+char server[] = "restaumator.com";
+WiFiClient client;
 
 int fsrPin = 0;
 int fsrPortemonee = 1;
@@ -11,103 +20,161 @@ int fullForce=440;
 int emptyForce=430;
 int minPortemoneeForce = 250;
 
-
-const char* connector = "rest";
-const char* server = "restaumator.robbertluit.be";
-const char* method = "GET";
-
-const char* activate = "/setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/1";
-const char* deactivate = "/setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/0";
-
-const char* activatePortemonee = "/setbilliconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/1";
-const char* deactivatePortemonee = "/setbilliconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/0";
-
 void setup() {
   Serial.begin(9600);
-  Ciao.begin();
-  pinMode(2, INPUT);
+  while (!Serial) {
+    ;
+  }
+  if (WiFi.status() == WL_NO_SHIELD) {
+    Serial.println("WiFi shield not present");
+    while (true);
+  }
+  String fv = WiFi.firmwareVersion();
+  if (fv != "1.1.0") {
+    Serial.println("Please upgrade the firmware");
+  }
+  while (status != WL_CONNECTED) {
+    Serial.print("Attempting to connect to SSID: ");
+    Serial.println(ssid);
+    status = WiFi.begin(ssid, pass);
+    delay(10000);
+  }
+  Serial.println("Connected to wifi");
+    // print the SSID of the network you're attached to:
+  Serial.print("SSID: ");
+  Serial.println(WiFi.SSID());
+
+  // print your WiFi shield's IP address:
+  IPAddress ip = WiFi.localIP();
+  Serial.print("IP Address: ");
+  Serial.println(ip);
+
+  // print the received signal strength:
+  long rssi = WiFi.RSSI();
+  Serial.print("signal strength (RSSI):");
+  Serial.print(rssi);
+  Serial.println(" dBm");
 }
-
-void doRequest(const char* conn, const char* server, char* command, const char* method){
-  CiaoData data = Ciao.write(conn, server, command, method);
-  if (!data.isEmpty()){
-    Ciao.println( "State: " + String (data.get(1)) );
-    Ciao.println( "Response: " + String (data.get(1)) );
-    Serial.println( "State: " + String (data.get(1)) );
-    Serial.println( "Response: " + String (data.get(1)) );
-  }
-  else{
-    Serial.print('\n');
-    Serial.println ("Drink Connection Error");
-  }
-}
-
-void doPortemoneeRequest(const char* conn, const char* server, char* command, const char* method){
-  CiaoData data = Ciao.write(conn, server, command, method);
-  if (!data.isEmpty()){
-    Ciao.println( "State: " + String (data.get(1)) );
-    Ciao.println( "Response: " + String (data.get(1)) );
-    Serial.println( "State: " + String (data.get(1)) );
-    Serial.println( "Response: " + String (data.get(1)) );
-  }
-  else{
-    Serial.print('\n');
-    Serial.println ("Portemonee Connection Error");
-  }
-}
-
-
 
 void loop(void) {
-  int fsrReading = analogRead(fsrPin); 
+  int fsrReading = analogRead(fsrPin);
   int fsrReadingPortemonee = analogRead(fsrPortemonee);
-  
+
   if(fsrReading < emptyForce || fsrReadingPortemonee < minPortemoneeForce) {
+    
     if(fsrReading < emptyForce && fsrReadingPortemonee < minPortemoneeForce) {
-      Serial.print('\n');
-      doRequest(connector, server, activate, method);
+      
+      if (client.connect(server, 80)) {
+        Serial.println("connected to server");
+         // Make a HTTP request:
+        client.println("GET /setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/1 HTTP/1.1");
+        client.println("Host: restaumator.com");
+        client.println("Connection: close");
+        client.println();
+        client.stop();
+        Serial.print('\n');}
       Serial.print(fsrReading);
       Serial.print("LEEG EN");
-      doPortemoneeRequest(connector, server, activatePortemonee, method);
       Serial.print(fsrReadingPortemonee);
       Serial.print("EN NIET BETALEN!");
     }
+    
     else if(fsrReading < emptyForce)
     {
-      doRequest(connector, server, activate, method);
+      if (client.connect(server, 80)) {
+        Serial.println("connected to server");
+         // Make a HTTP request:
+        client.println("GET /setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/1 HTTP/1.1");
+        client.println("Host: restaumator.com");
+        client.println("Connection: close");
+        client.println();
+        client.stop();
+        Serial.print('\n');
       Serial.print('\n');
+      }
       Serial.print(fsrReading);
       Serial.print("LEEG");
     }
+    
     else if(fsrReadingPortemonee < minPortemoneeForce)
     {
-      doPortemoneeRequest(connector, server, activatePortemonee, method);
+     if (client.connect(server, 80)) {
+        Serial.println("connected to server");
+         // Make a HTTP request:
+        client.println("GET /setbilliconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/1 HTTP/1.1");
+        client.println("Host: restaumator.com");
+        client.println("Connection: close");
+        client.println();
+        client.stop();
+        Serial.print('\n');
+        Serial.print('\n');
+      }
       Serial.print('\n');
       Serial.print(fsrReadingPortemonee);
       Serial.print("NIET BETALEN!");
     }
+    
   }
-  
+
   if(fsrReading > fullForce || fsrReadingPortemonee > minPortemoneeForce ) {
     if(fsrReading > fullForce && fsrReadingPortemonee > minPortemoneeForce) {
-      doRequest(connector, server, activatePortemonee , method);
+
+    if (client.connect(server, 80)) {
+      Serial.println("connected to server");
+       // Make a HTTP request:
+      client.println("GET /setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/0 HTTP/1.1");
+      client.println("Host: restaumator.com");
+      client.println("Connection: close");
+      client.println();
+      client.stop();
       Serial.print('\n');
+      Serial.print('\n');
+    }
       Serial.print(fsrReading);
       Serial.print("VOL EN");
-      doPortemoneeRequest(connector, server, deactivatePortemonee, method);
+      
+      if (client.connect(server, 80)) {
+        Serial.println("connected to server");
+         // Make a HTTP request:
+        client.println("GET /setbilliconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/0 HTTP/1.1");
+        client.println("Host: restaumator.com");
+        client.println("Connection: close");
+        client.println();
+        client.stop();
+        Serial.print('\n');
+        Serial.print('\n'); 
+      }
+      
       Serial.print(fsrReadingPortemonee);
       Serial.print("EN BETALEN");
     }
     else if(fsrReading > fullForce) {
-      doRequest(connector, server, deactivate , method);
+         if (client.connect(server, 80)) {
+        Serial.println("connected to server");
+         // Make a HTTP request:
+        client.println("GET /setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/0 HTTP/1.1");
+        client.println("Host: restaumator.com");
+        client.println("Connection: close");
+        client.println();
+        client.stop();
+        Serial.print('\n');
+      }
       Serial.print(fsrReading);
       Serial.print("VOL EN");
     }
      else if(fsrReadingPortemonee > minPortemoneeForce) {
-      doPortemoneeRequest(connector, server, deactivatePortemonee, method);
+      if (client.connect(server, 80)) {
+        Serial.println("connected to server");
+         // Make a HTTP request:
+        client.println("GET /setbilliconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/0 HTTP/1.1");
+        client.println("Host: restaumator.com");
+        client.println("Connection: close");
+        client.println();
+        client.stop();
+      }
       Serial.print(fsrReadingPortemonee);
       Serial.print("EN BETALEN");
     }
-  } 
+  }
+  delay(3000);
 }
-
