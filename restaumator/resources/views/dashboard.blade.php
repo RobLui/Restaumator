@@ -13,10 +13,10 @@
                     <ul class="restauranttables clearfix">
                         @foreach($tables as $table)
                             <li class="restauranttable">
-                                <button type="button" onclick="ActivateTable({{$table->tablenumber}})" class="btn btn-success activatebutton @if($table->is_active) hide @endif">
+                                <button type="button" onclick="ActivateTable({{ $table->tablenumber }})" class="btn btn-success activatebutton @if($table->is_active) hide @endif">
                                     Activate!
                                 </button>
-                                <button type="button" onclick="DeActivateTable({{$table->tablenumber}})" class="btn btn-danger deactivatebutton @if(!$table->is_active) hide @endif">
+                                <button type="button" onclick="DeActivateTable({{ $table->tablenumber }})" class="btn btn-danger deactivatebutton @if(!$table->is_active) hide @endif">
                                     De-Activate!
                                 </button>
                                 <div class="symbol text-center bg-yellow hide drinkicon">
