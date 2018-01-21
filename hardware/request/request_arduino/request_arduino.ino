@@ -1,6 +1,7 @@
-#include <Wire.h>
 #include <SPI.h>
 #include <WiFi.h>
+#include <Bridge.h>
+#include <HttpClient.h>
 
 char ssid[] = "WiFi-2.4-B948";
 char pass[] = "wwnpen5z62d4a";
@@ -8,7 +9,6 @@ int keyIndex = 0;
 
 int status = WL_IDLE_STATUS;
 char server[] = "restaumator.com";
-WiFiClient client;
 
 int fsrPin = 0;
 int fsrPortemonee = 1;
@@ -19,6 +19,9 @@ int fsrReadingPortemonee;
 int fullForce=440;
 int emptyForce=430;
 int minPortemoneeForce = 250;
+
+HttpClient client;
+
 
 void setup() {
   Serial.begin(9600);
@@ -54,6 +57,8 @@ void setup() {
   Serial.print("signal strength (RSSI):");
   Serial.print(rssi);
   Serial.println(" dBm");
+
+  
 }
 
 void loop(void) {
@@ -63,16 +68,7 @@ void loop(void) {
   if(fsrReading < emptyForce || fsrReadingPortemonee < minPortemoneeForce) {
     
     if(fsrReading < emptyForce && fsrReadingPortemonee < minPortemoneeForce) {
-      
-      if (client.connect(server, 80)) {
-        Serial.println("connected to server");
-         // Make a HTTP request:
-        client.println("GET /setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/1 HTTP/1.1");
-        client.println("Host: restaumator.com");
-        client.println("Connection: close");
-        client.println();
-        client.stop();
-        Serial.print('\n');}
+      client.get("https://www.restaumator.com/setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/1");
       Serial.print(fsrReading);
       Serial.print("LEEG EN");
       Serial.print(fsrReadingPortemonee);
@@ -81,34 +77,14 @@ void loop(void) {
     
     else if(fsrReading < emptyForce)
     {
-      if (client.connect(server, 80)) {
-        Serial.println("connected to server");
-         // Make a HTTP request:
-        client.println("GET /setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/1 HTTP/1.1");
-        client.println("Host: restaumator.com");
-        client.println("Connection: close");
-        client.println();
-        client.stop();
-        Serial.print('\n');
-      Serial.print('\n');
-      }
+      client.get("https://www.restaumator.com/setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/1");
       Serial.print(fsrReading);
       Serial.print("LEEG");
     }
     
     else if(fsrReadingPortemonee < minPortemoneeForce)
     {
-     if (client.connect(server, 80)) {
-        Serial.println("connected to server");
-         // Make a HTTP request:
-        client.println("GET /setbilliconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/1 HTTP/1.1");
-        client.println("Host: restaumator.com");
-        client.println("Connection: close");
-        client.println();
-        client.stop();
-        Serial.print('\n');
-        Serial.print('\n');
-      }
+      client.get("https://www.restaumator.com/setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/1");
       Serial.print('\n');
       Serial.print(fsrReadingPortemonee);
       Serial.print("NIET BETALEN!");
@@ -118,60 +94,20 @@ void loop(void) {
 
   if(fsrReading > fullForce || fsrReadingPortemonee > minPortemoneeForce ) {
     if(fsrReading > fullForce && fsrReadingPortemonee > minPortemoneeForce) {
-
-    if (client.connect(server, 80)) {
-      Serial.println("connected to server");
-       // Make a HTTP request:
-      client.println("GET /setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/0 HTTP/1.1");
-      client.println("Host: restaumator.com");
-      client.println("Connection: close");
-      client.println();
-      client.stop();
-      Serial.print('\n');
-      Serial.print('\n');
-    }
+    client.get("https://www.restaumator.com/setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/0");
       Serial.print(fsrReading);
       Serial.print("VOL EN");
-      
-      if (client.connect(server, 80)) {
-        Serial.println("connected to server");
-         // Make a HTTP request:
-        client.println("GET /setbilliconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/0 HTTP/1.1");
-        client.println("Host: restaumator.com");
-        client.println("Connection: close");
-        client.println();
-        client.stop();
-        Serial.print('\n');
-        Serial.print('\n'); 
-      }
-      
+      client.get("https://www.restaumator.com/setbilliconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/0");
       Serial.print(fsrReadingPortemonee);
       Serial.print("EN BETALEN");
     }
     else if(fsrReading > fullForce) {
-         if (client.connect(server, 80)) {
-        Serial.println("connected to server");
-         // Make a HTTP request:
-        client.println("GET /setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/0 HTTP/1.1");
-        client.println("Host: restaumator.com");
-        client.println("Connection: close");
-        client.println();
-        client.stop();
-        Serial.print('\n');
-      }
+      client.get("https://www.restaumator.com/setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/0");
       Serial.print(fsrReading);
       Serial.print("VOL EN");
     }
      else if(fsrReadingPortemonee > minPortemoneeForce) {
-      if (client.connect(server, 80)) {
-        Serial.println("connected to server");
-         // Make a HTTP request:
-        client.println("GET /setbilliconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/0 HTTP/1.1");
-        client.println("Host: restaumator.com");
-        client.println("Connection: close");
-        client.println();
-        client.stop();
-      }
+      client.get("https://www.restaumator.com/setbilliconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/0");
       Serial.print(fsrReadingPortemonee);
       Serial.print("EN BETALEN");
     }
