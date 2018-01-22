@@ -17,7 +17,7 @@ int fsrReading;
 int fsrReadingPortemonee;
 
 int fullForce=440;
-int emptyForce=430;
+int emptyForce=380;
 int minPortemoneeForce = 250;
 
 WiFiClient client;
@@ -64,7 +64,9 @@ void loop(void) {
     while (client.available()) {
     char c = client.read();
     Serial.write(c);
+    while(client.available()) client.flush();
   };
+  client.stop();
   int fsrReading = analogRead(fsrPin);
   int fsrReadingPortemonee = analogRead(fsrPortemonee);
 
@@ -76,19 +78,21 @@ void loop(void) {
         client.println("Host: restaumator.com");
         client.println("Connection: close");
         client.println();
+                delay(3000);
         client.flush();
         client.stop();
-        delay(1000);     
       }
+      delay(1000);     
       if (client.connect(server, 80)) {
         client.println("GET /table_billicon_off.php HTTP/1.1");
         client.println("Host: restaumator.com");
         client.println("Connection: close");
         client.println();
+                delay(3000);
         client.flush();
         client.stop();
-        delay(1000);     
-      }         
+      }
+      delay(1000);     
       Serial.print(fsrReading);
       Serial.print("LEEG EN");
       Serial.print(fsrReadingPortemonee);
@@ -102,7 +106,8 @@ void loop(void) {
         client.println("Host: restaumator.com");
         client.println("Connection: close");
         client.println();
-         client.flush();
+                delay(3000);
+        client.flush();
         client.stop();
        }
       Serial.print(fsrReading);
@@ -116,6 +121,7 @@ void loop(void) {
         client.println("Host: restaumator.com");
         client.println("Connection: close");
         client.println();
+                delay(3000);
         client.flush();
         client.stop();
       }      
@@ -133,17 +139,21 @@ void loop(void) {
         client.println("Host: restaumator.com");
         client.println("Connection: close");
         client.println();
+                delay(3000);
         client.flush();
         client.stop();
-        delay(1000);
        }
+       delay(1000);
       if (client.connect(server, 80)) {
         client.println("GET /table_billicon_on.php HTTP/1.1");
         client.println("Host: restaumator.com");
         client.println("Connection: close");
         client.println();
-        delay(1000);      
+        delay(3000);
+        client.flush();
+        client.stop();
       }
+      delay(1000);      
       Serial.print(fsrReading);
       Serial.print("VOL EN");
       Serial.print(fsrReadingPortemonee);
@@ -155,6 +165,7 @@ void loop(void) {
         client.println("Host: restaumator.com");
         client.println("Connection: close");
         client.println();
+        delay(3000);
         client.flush();
         client.stop();
        }
@@ -167,6 +178,7 @@ void loop(void) {
               client.println("Host: restaumator.com");
               client.println("Connection: close");
               client.println();
+              delay(3000);
               client.flush();
               client.stop();
             }            
