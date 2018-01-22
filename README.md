@@ -1,11 +1,13 @@
 # Restaumator
-
 ## = [Restaurant automator]
+http://restaumator.com/<br>
 
-Automate the process of being served in a restaurant, instead of having to call a waiter, waiters will get notifications as soon as you run out of liquids.
+Our application allows you to automate your restaurant!<br>
+No more clients staring around, looking for a waiter!<br>
+If glasses become empty, waiters will get automatic notifications to provide the customer with an extra drink!
+### Promo
+http://www.youtube.com/watch_popup?v=mxV8K7mM3-0
 
-Example:
+[![Promo](presentation/movie.PNG)](http://www.youtube.com/watch_popup?v=mxV8K7mM3-0)
 
-Someone has to wait for the bill, untill a waiter sees or hears them. With our project we want to change the way you have to wait for something. Every second less spend waiting is one won.
-
-Creators: Alessandro Aussems Robbert Luit
+Creators: [Alessandro Aussems](https://github.com/alessandroaussems) &amp; [Robbert Luit](https://github.com/RobLui) 
