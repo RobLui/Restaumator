@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use function floor;
 use function date;
 use function strtotime;
+use DateTime;
 
 class Handler extends Controller
 {
@@ -40,21 +41,9 @@ class Handler extends Controller
 
         $endbill = strtotime($table->time_bill);
         $secondsbill = $endbill - $start;
-        $hoursbill = floor($secondsbill/3600);
-        $minsbill = floor($secondsbill/60%60);
-        $secsbill = floor($secondsbill%60);
-        $timeFormatbill = sprintf('%02d:%02d:%02d', $hoursbill, $minsbill, $secsbill);
 
         $enddrink = strtotime($table->time_drink);
         $secondsdrink = $enddrink - $start;
-
-        $enddrink = strtotime($table->time_drink);
-        $secondsdrink = $enddrink - $start;
-        $hoursdrink = floor($secondsdrink/3600);
-        $minsdrink = floor($secondsdrink/60%60);
-        $secsdrink = floor($secondsdrink%60);
-
-        $timeFormatdrink = sprintf('%02d:%02d:%02d', $hoursdrink, $minsdrink, $secsdrink);
 
         $table->time_bill = "00:00:00";
         $table->time_drink =  "00:00:00";
@@ -63,8 +52,8 @@ class Handler extends Controller
         $table->save();
 
         $average = new Average();
-        $average->bill_time = "00:00:00";
-        $average->drink_time = "00:00:00";
+        $average->bill_time = gmdate("H:i:s",$secondsbill);
+        $average->drink_time = gmdate('H:i:s', $secondsdrink);
         $average->id_restaurants = 1;
 
         $average->save();
@@ -100,9 +89,7 @@ class Handler extends Controller
             $restaurant = Restaurants::where("id",$restaurantid)->first();
             if($hash == $restaurant->hash) // Authentication
             {
-                $timestamp = strtotime(date('H:i:s')) + 60*60;
-                $currenthour = date('H:i:s', $timestamp);
-                $tabletoactivatedrink->time_drink=$currenthour;
+                $tabletoactivatedrink->time_drink=date('H:i:s',time()+3600);
                 $tabletoactivatedrink->active_drink = $action;
                 $tabletoactivatedrink->save();
             }
@@ -122,9 +109,7 @@ class Handler extends Controller
             $restaurant = Restaurants::where("id",$restaurantid)->first();
             if($hash == $restaurant->hash) //Authentication
             {
-                $timestamp = strtotime(date('H:i:s')) + 60*60;
-                $currenthour = date('H:i:s', $timestamp);
-                $tabletoactivatebill->time_bill=$currenthour;
+                $tabletoactivatebill->time_bill=date('H:i:s',time()+3600);
                 $tabletoactivatebill->active_bill = $action;
                 $tabletoactivatebill->save();
             }
