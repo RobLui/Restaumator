@@ -8,7 +8,7 @@ char pass[] = "wwnpen5z62d4a";
 int keyIndex = 0;
 
 int status = WL_IDLE_STATUS;
-char server[] = "restaumator.com";
+char server[] = "www.restaumator.com";
 
 int fsrPin = 0;
 int fsrPortemonee = 1;
@@ -20,8 +20,7 @@ int fullForce=440;
 int emptyForce=430;
 int minPortemoneeForce = 250;
 
-HttpClient client;
-
+WiFiClient client;
 
 void setup() {
   Serial.begin(9600);
@@ -62,13 +61,30 @@ void setup() {
 }
 
 void loop(void) {
+    while (client.available()) {
+    char c = client.read();
+    Serial.write(c);
+  }
   int fsrReading = analogRead(fsrPin);
   int fsrReadingPortemonee = analogRead(fsrPortemonee);
 
   if(fsrReading < emptyForce || fsrReadingPortemonee < minPortemoneeForce) {
     
     if(fsrReading < emptyForce && fsrReadingPortemonee < minPortemoneeForce) {
-      client.get("https://www.restaumator.com/setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/1");
+      if (client.connect(server, 80)) {
+        client.println("GET /table_drinkicon_on.php HTTP/1.1");
+        client.println("Host: restaumator.com");
+        client.println("Connection: close");
+        client.println();
+        delay(500);
+       }
+      if (client.connect(server, 80)) {
+        client.println("GET /table_billicon_off.php HTTP/1.1");
+        client.println("Host: restaumator.com");
+        client.println("Connection: close");
+        client.println();
+      }
+      
       Serial.print(fsrReading);
       Serial.print("LEEG EN");
       Serial.print(fsrReadingPortemonee);
@@ -77,14 +93,24 @@ void loop(void) {
     
     else if(fsrReading < emptyForce)
     {
-      client.get("https://www.restaumator.com/setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/1");
+      if (client.connect(server, 80)) {
+        client.println("GET /table_drinkicon_on.php HTTP/1.1");
+        client.println("Host: restaumator.com");
+        client.println("Connection: close");
+        client.println();
+       }
       Serial.print(fsrReading);
       Serial.print("LEEG");
     }
     
     else if(fsrReadingPortemonee < minPortemoneeForce)
     {
-      client.get("https://www.restaumator.com/setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/1");
+      if (client.connect(server, 80)) {
+        client.println("GET /table_billicon_off.php HTTP/1.1");
+        client.println("Host: restaumator.com");
+        client.println("Connection: close");
+        client.println();
+      }      
       Serial.print('\n');
       Serial.print(fsrReadingPortemonee);
       Serial.print("NIET BETALEN!");
@@ -94,20 +120,41 @@ void loop(void) {
 
   if(fsrReading > fullForce || fsrReadingPortemonee > minPortemoneeForce ) {
     if(fsrReading > fullForce && fsrReadingPortemonee > minPortemoneeForce) {
-    client.get("https://www.restaumator.com/setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/0");
+      if (client.connect(server, 80)) {
+        client.println("GET /table_drinkicon_off.php HTTP/1.1");
+        client.println("Host: restaumator.com");
+        client.println("Connection: close");
+        client.println();
+        delay(500);
+       }
+      if (client.connect(server, 80)) {
+        client.println("GET /table_billicon_on.php HTTP/1.1");
+        client.println("Host: restaumator.com");
+        client.println("Connection: close");
+        client.println();
+      }      
       Serial.print(fsrReading);
       Serial.print("VOL EN");
-      client.get("https://www.restaumator.com/setbilliconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/0");
       Serial.print(fsrReadingPortemonee);
       Serial.print("EN BETALEN");
     }
     else if(fsrReading > fullForce) {
-      client.get("https://www.restaumator.com/setdrinkiconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/0");
-      Serial.print(fsrReading);
-      Serial.print("VOL EN");
+      if (client.connect(server, 80)) {
+        client.println("GET /table_drinkicon_off.php HTTP/1.1");
+        client.println("Host: restaumator.com");
+        client.println("Connection: close");
+        client.println();
+       }
+       Serial.print(fsrReading);
+       Serial.print("VOL EN");
     }
      else if(fsrReadingPortemonee > minPortemoneeForce) {
-      client.get("https://www.restaumator.com/setbilliconfortable/1/restaurant/1/hash/hLWriokZEZpnX3iXVlzOwJxaM3a3SsqE/action/0");
+       if (client.connect(server, 80)) {
+              client.println("GET /table_billicon_on.php HTTP/1.1");
+              client.println("Host: restaumator.com");
+              client.println("Connection: close");
+              client.println();
+            }            
       Serial.print(fsrReadingPortemonee);
       Serial.print("EN BETALEN");
     }
