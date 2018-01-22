@@ -6,7 +6,7 @@ Route::get('/', 'ProductpageController@index')
     ->name('productpage')
     ;
 
-Route::get('/home', 'HomeController@index')
+Route::get('/home', 'Handler@SetTableNonActive')
     ->name('home')
     ;
 

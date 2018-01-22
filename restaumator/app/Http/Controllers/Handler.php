@@ -28,7 +28,7 @@ class Handler extends Controller
 
     public function SetTableNonActive(Request $req) {
 
-        $tablenumber = $req->table;
+        $tablenumber = 1;
 
         $table = Restauranttables::where("tablenumber", $tablenumber)->first();
         if ($table->is_active) {
@@ -36,7 +36,7 @@ class Handler extends Controller
         }
         $table->active_drink=0;
         $table->active_bill=0;
-        if($table->time_bill!=sprintf('%02d:%02d:%02d', "00", "00", "00") || $table->time_drink!=sprintf('%02d:%02d:%02d', "00", "00", "00"));
+        if(strtotime($table->time_bill) != strtotime( "00:00:00") && strtotime($table->time_drink) != strtotime( "00:00:00"))
         {
             $start = strtotime($table->activated_at);
             $endbill = strtotime($table->time_bill);
@@ -50,12 +50,11 @@ class Handler extends Controller
             $average->drink_time = $this->format_time($secondsdrink);
             $average->id_restaurants = 1;
             $average->save();
-
         }
         $table->time_bill = "00:00:00";
         $table->time_drink =  "00:00:00";
         $table->save();
-        return;
+//        return view('home',['time_bill' => $table->time_bill]);
     }
     function format_time($t,$f=':') // t = seconds, f = separator
     {
