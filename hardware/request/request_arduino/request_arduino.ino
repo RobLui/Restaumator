@@ -76,15 +76,16 @@ void loop(void) {
         client.println("Host: restaumator.com");
         client.println("Connection: close");
         client.println();
-        delay(500);
-       }
+      }
+      delay(1000);     
       if (client.connect(server, 80)) {
         client.println("GET /table_billicon_off.php HTTP/1.1");
         client.println("Host: restaumator.com");
         client.println("Connection: close");
         client.println();
       }
-      
+      delay(1000);
+         
       Serial.print(fsrReading);
       Serial.print("LEEG EN");
       Serial.print(fsrReadingPortemonee);
@@ -125,14 +126,15 @@ void loop(void) {
         client.println("Host: restaumator.com");
         client.println("Connection: close");
         client.println();
-        delay(500);
        }
+      delay(1000);
       if (client.connect(server, 80)) {
         client.println("GET /table_billicon_on.php HTTP/1.1");
         client.println("Host: restaumator.com");
         client.println("Connection: close");
         client.println();
-      }      
+      }
+      delay(1000);      
       Serial.print(fsrReading);
       Serial.print("VOL EN");
       Serial.print(fsrReadingPortemonee);
