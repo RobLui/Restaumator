@@ -28,7 +28,7 @@ class Handler extends Controller
 
     public function SetTableNonActive(Request $req) {
 
-        $tablenumber = 1;
+        $tablenumber = $req->table;
 
         $table = Restauranttables::where("tablenumber", $tablenumber)->first();
         if ($table->is_active) {
