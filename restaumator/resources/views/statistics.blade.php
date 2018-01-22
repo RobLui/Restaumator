@@ -5,7 +5,7 @@
 @include('partials._logged-in-nav')
 
 <div class="container">
-    <h1 class="restaurantname"> {{ $restaurant->name }} </h1>
+    <img class="restaurantname margin-top-minus-3" src="{{ asset('img/het_huis_pixelated.png') }}" alt="Restaurant Het Huis">
     <div class="jumbotron text-center bg-primary">
         <h2 class="text-white"> Your restaurant statistics </h2>
     </div>
@@ -21,7 +21,9 @@
 
                 <div class="top-1">
                     <span class="info-box-number">
-                        {{ $drink_time }}
+                        @if(!empty($drink_time))
+                            {{ $drink_time }}
+                        @endif
                     </span>
                 </div>
 
@@ -41,7 +43,9 @@
 
                 <div class="top-1">
                     <span class="info-box-number">
-                        {{ $bill_time }}
+                        @if(!empty($bill_time))
+                            {{ $bill_time }}
+                        @endif
                     </span>
                 </div>
 

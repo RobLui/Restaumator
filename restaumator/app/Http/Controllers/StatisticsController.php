@@ -26,8 +26,12 @@ class StatisticsController extends Controller
         if (count($averages)>0) {
             foreach($averages as $average => $value)
             {
-                list($hoursavg, $minutesavg, $secondsavg) = explode(':', $value->bill_time);
-                list($hoursavgdrink,$minutesavgdrink,$secondsavgdrink) = explode(':', $value->drink_time);
+                if(!empty($value->bill_time)) {
+                    list($hoursavg, $minutesavg, $secondsavg) = explode(':', $value->bill_time);
+                }
+                if(!empty($value->drink_time)) {
+                    list($hoursavgdrink,$minutesavgdrink,$secondsavgdrink) = explode(':', $value->drink_time);
+                }
 
                 array_push($hours, intval($hoursavg));
                 array_push($minutes, intval($minutesavg));
