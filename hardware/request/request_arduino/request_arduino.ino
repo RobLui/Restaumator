@@ -64,7 +64,7 @@ void loop(void) {
     while (client.available()) {
     char c = client.read();
     Serial.write(c);
-  }
+  };
   int fsrReading = analogRead(fsrPin);
   int fsrReadingPortemonee = analogRead(fsrPortemonee);
 
@@ -76,6 +76,8 @@ void loop(void) {
         client.println("Host: restaumator.com");
         client.println("Connection: close");
         client.println();
+        client.flush();
+        client.stop();
         delay(1000);     
       }
       if (client.connect(server, 80)) {
@@ -83,6 +85,8 @@ void loop(void) {
         client.println("Host: restaumator.com");
         client.println("Connection: close");
         client.println();
+        client.flush();
+        client.stop();
         delay(1000);     
       }         
       Serial.print(fsrReading);
@@ -98,6 +102,8 @@ void loop(void) {
         client.println("Host: restaumator.com");
         client.println("Connection: close");
         client.println();
+         client.flush();
+        client.stop();
        }
       Serial.print(fsrReading);
       Serial.print("LEEG");
@@ -110,6 +116,8 @@ void loop(void) {
         client.println("Host: restaumator.com");
         client.println("Connection: close");
         client.println();
+        client.flush();
+        client.stop();
       }      
       Serial.print('\n');
       Serial.print(fsrReadingPortemonee);
@@ -125,6 +133,8 @@ void loop(void) {
         client.println("Host: restaumator.com");
         client.println("Connection: close");
         client.println();
+        client.flush();
+        client.stop();
         delay(1000);
        }
       if (client.connect(server, 80)) {
@@ -145,6 +155,8 @@ void loop(void) {
         client.println("Host: restaumator.com");
         client.println("Connection: close");
         client.println();
+        client.flush();
+        client.stop();
        }
        Serial.print(fsrReading);
        Serial.print("ENKEl VOL");
@@ -155,6 +167,8 @@ void loop(void) {
               client.println("Host: restaumator.com");
               client.println("Connection: close");
               client.println();
+              client.flush();
+              client.stop();
             }            
       Serial.print(fsrReadingPortemonee);
       Serial.print("ENKEL BETALEN");
