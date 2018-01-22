@@ -34,32 +34,33 @@ class Handler extends Controller
         if ($table->is_active) {
             $table->is_active = false;
         }
-
-        // LOS
-        $tablewasactivatedat = $table->activated_at;
-        $start = strtotime($tablewasactivatedat);
-
-        $endbill = strtotime($table->time_bill);
-        $secondsbill = $endbill - $start;
-
-        $enddrink = strtotime($table->time_drink);
-        $secondsdrink = $enddrink - $start;
-
-        $table->time_bill = "00:00:00";
-        $table->time_drink =  "00:00:00";
         $table->active_drink=0;
         $table->active_bill=0;
+        if($table->time_bill!=sprintf('%02d:%02d:%02d', "00", "00", "00") || $table->time_drink!=sprintf('%02d:%02d:%02d', "00", "00", "00"));
+        {
+            $start = strtotime($table->activated_at);
+            $endbill = strtotime($table->time_bill);
+            $secondsbill = $endbill - $start;
+
+            $enddrink = strtotime($table->time_drink);
+            $secondsdrink = $enddrink - $start;
+
+            $average = new Average();
+            $average->bill_time = $this->format_time($secondsbill);
+            $average->drink_time = $this->format_time($secondsdrink);
+            $average->id_restaurants = 1;
+            $average->save();
+
+        }
+        $table->time_bill = "00:00:00";
+        $table->time_drink =  "00:00:00";
         $table->save();
-
-        $average = new Average();
-        $average->bill_time = gmdate("H:i:s",$secondsbill);
-        $average->drink_time = gmdate('H:i:s', $secondsdrink);
-        $average->id_restaurants = 1;
-
-        $average->save();
         return;
     }
-
+    function format_time($t,$f=':') // t = seconds, f = separator
+    {
+        return sprintf("%02d%s%02d%s%02d", floor($t/3600), $f, ($t/60)%60, $f, $t%60);
+    }
     public function CheckIfSomeThingHappend() {
 
         $tablesDrinksNeeded = Restauranttables::where([
