@@ -22,12 +22,17 @@
 
 --- 
 <!-- *template: invert -->
-# Demo
+# Demo[:computer:](http://www.youtube.com/watch_popup?v=Xt9YNxKBp6k)
 
 
+ ## <center>[restaumator.com](http://restaumator.com/)
+---
+# Lessons Learned :flushed:
 
- ## restaumator.com
- 
+![200% center](dontarduinowifi.PNG)
+
+# <center>:sweat_smile: :sweat_smile: :sweat_smile:
+
 ---
 
 ![bg original](http://m.memegen.com/4hwmg3.jpg)
