@@ -3,8 +3,8 @@
 #include <Bridge.h>
 #include <HttpClient.h>
 
-char ssid[] = "WiFi-2.4-B948";
-char pass[] = "wwnpen5z62d4a";
+char ssid[] = "Restaumator";
+char pass[] = "12345678";
 int keyIndex = 0;
 
 int status = WL_IDLE_STATUS;
